@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FloppySoftware - XPCW</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
+  <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="" onload="">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="padding-right:0px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+  <!--span class="w3-bar-item">FloppySoftware</span-->
+  <span class="w3-bar-item"><img src="images/logo_floppy_software.png" alt="FloppySoftware logo"></span>
+  <!--span class="w3-bar-item w3-right">Logo</span-->
+  <!--span class="w3-right">
+	<a class="icon" href="index.html?lang=es"><img src="flag_es.png" alt="Español"></a>
+	<a class="icon" href="index.html?lang=en"><img src="flag_en.png" alt="Inglés"></a>
+  </span-->
+</div>
+
+<!-- Sidebar/menu -->
+
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row menu_title">
+	Developing software since 1987
+  </div>
+  <hr>
+  <div class="w3-bar-block">
+
+	<a href="index.html" class="w3-bar-item w3-button w3-padding menu-option" id="index">
+		<i class="fas fa-home fa-fw"></i>&nbsp; Home	</a>
+	<a href="projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Professional projects	</a>
+	<a href="my-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="my-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Personal projects	</a>
+	<a href="cpm-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="cpm-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; CP/M projects	</a>
+	<a href="pcw-projects.html" class="w3-bar-item w3-button w3-padding menu-option menu-option-selected" id="pcw-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Amstrad PCW projects	</a>
+	<a href="notebook.html" class="w3-bar-item w3-button w3-padding menu-option" id="notebook">
+		<i class="fas fa-pencil-alt fa-fw"></i>&nbsp; Notebook	</a>
+	<a href="downloads.html" class="w3-bar-item w3-button w3-padding menu-option" id="downloads">
+		<i class="fas fa-download fa-fw"></i>&nbsp; Downloads	</a>
+	<a href="links.html" class="w3-bar-item w3-button w3-padding menu-option" id="links">
+		<i class="fas fa-link fa-fw"></i>&nbsp; Links	</a>
+	<a href="terms-and-privacy.html" class="w3-bar-item w3-button w3-padding menu-option" id="terms-and-privacy">
+		<i class="fas fa-shield-alt fa-fw"></i>&nbsp; Terms & privacy	</a>
+
+	<br><br>
+  </div>
+</nav>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+  
+  <!-- Contents goes here -->
+  <div id="section_main" class="section_main">
+  		<div class="w3-container md">
+<div class="software-project-body">
+    <h1>
+        XPCW    </h1>
+                <p>
+                <i class="fab fa-github"></i> <a href="https://github.com/MiguelVis/xpcw" target="_blank" title="GitHub repository">https://github.com/MiguelVis/xpcw</a>
+            </p>
+        <hr class="software-project-separator"/>
+    <p>XPCW is a graphics and keyboard library for the Amstrad PCW, under the CP/M operating system.</p>
+<p>It consists of a CP/M Plus RSX file, with some library files (<code>.h</code>) for MESCC, my own version of the Small-C compiler.</p>
+<p>The RSX is written in Z80 assembler source code.</p>
+<p>It can be accessed by any CP/M program or language, provided it follows its conventions (read the RSX source code for more information).</p>
+<p>The <code>XPCW.RSX</code> file, has to be attached to any program that uses this library.</p>
+<p>Only one MESCC library is needed (<code>xpcw.h</code>), the other are optional.</p>
+<p>The libraries are:</p>
+<ul>
+<li><code>xpcw.h</code> - Main library.</li>
+<li><code>xdraw.h</code> - Functions to draw pixels, lines, etc.</li>
+<li><code>xtext.h</code> - Functions to write text, set the font, change attributes, etc.</li>
+<li><code>xchrdef.h</code> - Functions to get / set character definitions.</li>
+<li><code>xbitmap.h</code> - Functions to draw bitmaps.</li>
+<li><code>xkeyb.h</code> - Functions to access the keyboard.</li>
+</ul>
+<p>See the libraries source code, for more information about the available functions.</p>
+<p>As an example, you can see the XDEMO program.</p>
+<p>One of my games for the Amstrad PCW, Squarex, uses XPCW too.</p>
+<p><img src="images/pcw-xpcw.png" alt="XPCW image" title="XPCW image" /></p></div>
+		</div>
+  </div>
+
+  <!-- Footer -->
+  <br><br>
+  <footer class="w3-container">
+    <p class="">
+      &copy; 2026 Miguel I. Garc&iacute;a L&oacute;pez	  </p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.backgroundColor = 'transparent';
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.backgroundColor = '#fff';
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+<!--script src="js/app.js"></script-->
+
+</body>
+</html>

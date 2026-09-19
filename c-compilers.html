@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FloppySoftware - C compilers for CP/M</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
+  <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="" onload="">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="padding-right:0px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+  <!--span class="w3-bar-item">FloppySoftware</span-->
+  <span class="w3-bar-item"><img src="images/logo_floppy_software.png" alt="FloppySoftware logo"></span>
+  <!--span class="w3-bar-item w3-right">Logo</span-->
+  <!--span class="w3-right">
+	<a class="icon" href="index.html?lang=es"><img src="flag_es.png" alt="Español"></a>
+	<a class="icon" href="index.html?lang=en"><img src="flag_en.png" alt="Inglés"></a>
+  </span-->
+</div>
+
+<!-- Sidebar/menu -->
+
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row menu_title">
+	Developing software since 1987
+  </div>
+  <hr>
+  <div class="w3-bar-block">
+
+	<a href="index.html" class="w3-bar-item w3-button w3-padding menu-option" id="index">
+		<i class="fas fa-home fa-fw"></i>&nbsp; Home	</a>
+	<a href="projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Professional projects	</a>
+	<a href="my-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="my-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Personal projects	</a>
+	<a href="cpm-projects.html" class="w3-bar-item w3-button w3-padding menu-option menu-option-selected" id="cpm-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; CP/M projects	</a>
+	<a href="pcw-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="pcw-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Amstrad PCW projects	</a>
+	<a href="notebook.html" class="w3-bar-item w3-button w3-padding menu-option" id="notebook">
+		<i class="fas fa-pencil-alt fa-fw"></i>&nbsp; Notebook	</a>
+	<a href="downloads.html" class="w3-bar-item w3-button w3-padding menu-option" id="downloads">
+		<i class="fas fa-download fa-fw"></i>&nbsp; Downloads	</a>
+	<a href="links.html" class="w3-bar-item w3-button w3-padding menu-option" id="links">
+		<i class="fas fa-link fa-fw"></i>&nbsp; Links	</a>
+	<a href="terms-and-privacy.html" class="w3-bar-item w3-button w3-padding menu-option" id="terms-and-privacy">
+		<i class="fas fa-shield-alt fa-fw"></i>&nbsp; Terms & privacy	</a>
+
+	<br><br>
+  </div>
+</nav>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+  
+  <!-- Contents goes here -->
+  <div id="section_main" class="section_main">
+  		<div class="w3-container md">
+<div class="w3-container">
+    <h1 class="section_title">C compilers for CP/M</h1>
+
+    <p>
+        This is a list of C compilers for CP/M.
+    </p>
+    <p>
+        If you know other C compilers or mistakes in this information,
+        please, email me.
+    </p>
+    <p>
+        Some abreviations used here:
+    </p>
+    <ul>
+        <li><em>K&amp;R</em> means Kernighan and Ritchie.</li>
+        <li><em>PD</em> means Public Domain.</li>
+        <li><em>GPL</em> means GNU Public License.</li>
+    </ul>
+</div>
+<div class="w3-container">
+    <h2 class="section_title">The list</h2>
+
+    <ul>
+        <li>
+        <em>
+            Alcyon C
+        </em>
+        <br>
+        For CP/M-68K. Includes compiler, assembler, linker and libraries.
+        <br>
+        <a href="http://www.cpm.z80.de/download/cpm68k1.zip">http://www.cpm.z80.de/download/cpm68k1.zip</a>
+        <br>
+        <a href="http://www.cpm.z80.de/download/lib68881.zip">http://www.cpm.z80.de/download/lib68881.zip</a>
+        (Floating point library for the 68881 or 68882)
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            Aztec C
+        </em>
+        <br>
+        For CP/M-80. By Aztec. K&amp;R. Good overlay manager.
+        <br>
+        <a href="http://www.retroarchive.org/cpm/lang/az106d.zip">http://www.retroarchive.org/cpm/lang/az106d.zip</a>
+        (v.106D Professional)
+        <br>
+        <a href="http://www.retroarchive.org/cpm/lang/AZTEC302.ZIP">http://www.retroarchive.org/cpm/lang/AZTEC302.ZIP</a>
+        (v3.02 for CP/M-86)
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            BDS C
+        </em>
+        <br>
+        For CP/M-80. By BD Software (Leor Zolman). K&amp;R. Freely available.
+        Source code included.
+        <br>
+        <a href="http://www.bdsoft.com/resources/bdsc.html">http://www.bdsoft.com/resources/bdsc.html</a>
+        <br>
+        <a href="http://www.cpm.z80.de/develop.htm">http://www.cpm.z80.de/develop.htm</a>
+        <br>
+        <a href="http://www.retroarchive.org/cpm/lang/BDSCUG.ZIP">http://www.retroarchive.org/cpm/lang/BDSCUG.ZIP</a>
+        (BDS C User Group files)
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            C/80
+        </em>
+        <br>
+        For CP/M-80. By Software Toolworks.
+        <br>
+        <a href="http://www.retroarchive.org/cpm/lang/c80v31.zip">http://www.retroarchive.org/cpm/lang/c80v31.zip</a>
+        (v3.1)
+        <br>
+        <a href="http://www.retroarchive.org/cpm/lang/c80v30.zip">http://www.retroarchive.org/cpm/lang/c80v30.zip</a>
+        (v3.0a)
+        <br>
+        <a href="http://www.retroarchive.org/docs/clib_pt1.pdf">http://www.retroarchive.org/docs/clib_pt1.pdf</a>
+        (C library v3.2 manual, part 1)
+        <br>
+        <a href="http://www.retroarchive.org/docs/clib_pt2.pdf">http://www.retroarchive.org/docs/clib_pt2.pdf</a>
+        (C library v3.2 manual, part 2)
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            DR C
+        </em>
+        <br>
+        For CP/M-86. By Digital Research.
+        <br>
+        <a href="http://www.autometer.de/gaby/DRI/lastdri.zip">http://www.autometer.de/gaby/DRI/lastdri.zip</a>
+        <br>
+        <a href="http://www.cpm.z80.de/download/drc86.zip">http://www.cpm.z80.de/download/drc86.zip</a>
+        <br>
+        <a href="http://www.cpm.z80.de/download/drc_86.zip">http://www.cpm.z80.de/download/drc_86.zip</a>
+        (v1.1)
+        <br>
+        <a href="http://www.cpm.z80.de/download/drc86111.zip">http://www.cpm.z80.de/download/drc86111.zip</a>
+        (v1.11)
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            HiTech C v3.09
+        </em>
+        <br>
+        For CP/M-80. By Hi-Tech Software. ANSI. Freely available.
+        Includes compiler, assembler, linker, librarian and debugger,
+        library source code. Also known as Avocet C.
+        <br>
+        <a href="http://www.htsoft.com">http://www.htsoft.com</a>
+        <br>
+        <a href="http://www.retroarchive.org/cpm/cdrom/SIMTEL/HITECH-C/">http://www.retroarchive.org/cpm/cdrom/SIMTEL/HITECH-C/</a>
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            MESCC, Mike's Enhanced Small C Compiler
+        </em>
+        <br>
+        For CP/M-80, Floppy Software (Miguel Garcia),
+        K&amp;R subset, GPL.
+        <br>
+        Generates Z80 assembler code. Includes assembler, loader, optimizer.
+        Includes source code. Can assemble itself.
+        <br>
+        <a href="http://www.floppysoftware.es">http://www.floppysoftware.es</a>
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            Mi-C
+        </em>
+        <br>
+        For CP/M-80. German compiler.
+        <br>
+        <a href="http://www.retroarchive.org/cpm/lang/mi_c.zip">http://www.retroarchive.org/cpm/lang/mi_c.zip</a>
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            MIX C
+        </em>
+        <br>
+        For CP/M-80. By MIX Software. K&amp;R.
+        <br>
+        <a href="http://www.retroarchive.org/cpm/lang/mix-c.zip">http://www.retroarchive.org/cpm/lang/mix-c.zip</a>
+        (v2.0)
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            Q/C
+        </em>
+        <br>
+        For CP/M-80. By The CodeWorks (Jim Colvins).
+        <br>
+        <a href="http://www.classiccmp.org/dunfield/img/applic.htm">http://www.classiccmp.org/dunfield/img/applic.htm</a>
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            SDCC, Small Device C Compiler
+        </em>
+        <br>
+        ANSI. GPL.
+        Cross-compiler for various cpus, Z80 included. MS-DOS hosted.
+        Source code included.
+        <br>
+        <a href="http://sdcc.sourceforge.net/">http://sdcc.sourceforge.net/</a>
+        <br>
+        <a href="http://sourceforge.net/projects/sdcc/">http://sourceforge.net/projects/sdcc/</a>
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            Small C
+        </em>
+        <br>
+        For CP/M-80, CP/M-86, MSDOS, ... originally written by Ron Cain.
+        K&amp;R subset. PD. Generates assembler code.
+        <br>
+        <a href="http://www.cpm.z80.de/small_c.html">http://www.cpm.z80.de/small_c.html</a>
+        <br>
+        <a href="http://www.ddjembedded.com/languages/smallc/">http://www.ddjembedded.com/languages/smallc/</a>
+        <br>
+        <a href="http://www.cpm.z80.de/small_c/smallc86.zip">http://www.cpm.z80.de/small_c/smallc86.zip</a>
+        (v1.1 for CP/M-86)
+        <br>
+        <a href="http://www.cpm.z80.de/small_c/smc88dos.zip">http://www.cpm.z80.de/small_c/smc88dos.zip</a>
+        (8080 for DOS)
+        <br>
+        <a href="http://www.cpm.z80.de/small_c/c80dos.zip">http://www.cpm.z80.de/small_c/c80dos.zip</a>
+        (8080 crosscompiler for DOS by R. Cain)
+        <br>
+        <a href="http://www.cpm.z80.de/small_c/sci.zip">http://www.cpm.z80.de/small_c/sci.zip</a>
+        (Interpreter by Bob Brodt)
+        <br>
+        <a href="http://www.cpm.z80.de/small_c/small-c.tar.gz">http://www.cpm.z80.de/small_c/small-c.tar.gz</a>
+        (For Unix)
+        <br>
+        <a href="http://www.cpm.z80.de/small_c/smallc21.zip">http://www.cpm.z80.de/small_c/smallc21.zip</a>
+        (v2.1 by Jim Hendrix)
+        <br>
+        <a href="http://www.cpm.z80.de/small_c/smallcp.zip">http://www.cpm.z80.de/small_c/smallcp.zip</a>
+        (Small C/Plus v1.0)
+        <br>
+        <a href="http://www.ddjembedded.com/languages/smallc/smallc/z80/">http://www.ddjembedded.com/languages/smallc/smallc/z80/</a>
+        (zcc v0.96 by Ken Yap)
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            Tiny C
+        </em>
+        <br>
+        For CP/M-80. K&amp;R.
+        <br>
+        <a href="http://www.retroarchive.org/cpm/lang/TINY_C.ZIP">http://www.retroarchive.org/cpm/lang/TINY_C.ZIP</a>
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            Whitesmith's C
+        </em>
+        <br>
+        For CP/M-80. K&amp;R.
+        <br>
+        <a href="http://www.e-tech.net/~pbetti/archive/rlee/W/WHITESMITH/C/">http://www.e-tech.net/~pbetti/archive/rlee/W/WHITESMITH/C/</a>
+        <br>
+        <br>
+        </li><li>
+        <em>
+            Z88DK, Z88 Development Kit
+        </em>
+        <br>
+        ANSI. GPL.
+        Cross-compiler for the Z80 cpu. MS-DOS hosted.
+        Source code included.
+        <br>
+        <a href="http://www.z88dk.org/">http://www.z88dk.org/</a>
+        <br>
+        <br>
+
+        </li><li>
+        <em>
+            Zilog C Compiler v1.01e 12/26/84
+        </em>
+        <br>
+        For CP/M-Z8K.
+        <br>
+        <a href="http://www.cpm.z80.de/download/8k0583.zip">http://www.cpm.z80.de/download/8k0583.zip</a>
+        <br>
+        <br>
+    </li></ul>
+</div>		</div>
+  </div>
+
+  <!-- Footer -->
+  <br><br>
+  <footer class="w3-container">
+    <p class="">
+      &copy; 2026 Miguel I. Garc&iacute;a L&oacute;pez	  </p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.backgroundColor = 'transparent';
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.backgroundColor = '#fff';
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+<!--script src="js/app.js"></script-->
+
+</body>
+</html>

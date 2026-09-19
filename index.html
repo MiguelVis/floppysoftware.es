@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FloppySoftware</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
+  <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="" onload="">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="padding-right:0px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+  <!--span class="w3-bar-item">FloppySoftware</span-->
+  <span class="w3-bar-item"><img src="images/logo_floppy_software.png" alt="FloppySoftware logo"></span>
+  <!--span class="w3-bar-item w3-right">Logo</span-->
+  <!--span class="w3-right">
+	<a class="icon" href="index.html?lang=es"><img src="flag_es.png" alt="Español"></a>
+	<a class="icon" href="index.html?lang=en"><img src="flag_en.png" alt="Inglés"></a>
+  </span-->
+</div>
+
+<!-- Sidebar/menu -->
+
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row menu_title">
+	Developing software since 1987
+  </div>
+  <hr>
+  <div class="w3-bar-block">
+
+	<a href="index.html" class="w3-bar-item w3-button w3-padding menu-option menu-option-selected" id="index">
+		<i class="fas fa-home fa-fw"></i>&nbsp; Home	</a>
+	<a href="projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Professional projects	</a>
+	<a href="my-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="my-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Personal projects	</a>
+	<a href="cpm-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="cpm-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; CP/M projects	</a>
+	<a href="pcw-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="pcw-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Amstrad PCW projects	</a>
+	<a href="notebook.html" class="w3-bar-item w3-button w3-padding menu-option" id="notebook">
+		<i class="fas fa-pencil-alt fa-fw"></i>&nbsp; Notebook	</a>
+	<a href="downloads.html" class="w3-bar-item w3-button w3-padding menu-option" id="downloads">
+		<i class="fas fa-download fa-fw"></i>&nbsp; Downloads	</a>
+	<a href="links.html" class="w3-bar-item w3-button w3-padding menu-option" id="links">
+		<i class="fas fa-link fa-fw"></i>&nbsp; Links	</a>
+	<a href="terms-and-privacy.html" class="w3-bar-item w3-button w3-padding menu-option" id="terms-and-privacy">
+		<i class="fas fa-shield-alt fa-fw"></i>&nbsp; Terms & privacy	</a>
+
+	<br><br>
+  </div>
+</nav>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+  
+  <!-- Contents goes here -->
+  <div id="section_main" class="section_main">
+  <div class="w3-container w3-center">
+    <img class="w3-margin-top my-photo w3-circle" src="images/me.jpg" alt="Just my photo">
+
+    <h1 class="section_title">Hello! I'm Miguel</h1>
+
+    <h5>Software Developer</h5>
+    <h5>Team leader and project manager</h5>
+
+    <p>
+        Currently, I'm the head of the development department at <a href="https://nethits.com/" target="_blank">NETHITS IT Solutions</a>, working in hospitality solutions.
+    </p>
+
+    <p>
+        FloppySoftware
+    </p>
+
+    <p>
+        <a href="https://www.linkedin.com/in/miguel-indalecio-garc%C3%ADa-l%C3%B3pez-14a360122" target="_blank" title="My LinkedIn profile"><i class="fab fa-linkedin fa-fw fa-lg"></i></a>
+        <a href="https://github.com/MiguelVis" target="_blank" title="My GitHub repositories"><i class="fab fa-github fa-fw fa-lg"></i></a>
+        <a href="mailto:floppysoftware@gmail.com" title="floppysoftware@gmail.com"><i class="far fa-envelope fa-fw fa-lg"></i></a>
+    </p>
+
+</div>
+<div class="w3-row-padding">
+    <div class="w3-half">
+        <div class="w3-panel w3-card-4 w3-white">
+            <p class=""><i class="fa fa-code fa-fw w3-text-black"></i> <strong>Computer Languages</strong></p>
+            <ul>
+                <li>PHP</li>
+                <li>Java, Spring Boot</li>
+                <li>JavaScript, React</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>MySQL, design of database schemas</li>
+                <li>C</li>
+                <li>Swift
+                </li><li>Assembler</li>
+                <li>Linux shell scripts</li>
+                <li class="half-empty">
+            </li></ul>
+        </div>
+    </div>
+
+    <div class="w3-half">
+        <div class="w3-panel w3-card-4 w3-white">
+            <p class=""><i class="fa fa-tools fa-fw w3-text-black"></i> <strong>Technologies</strong></p>
+            <ul>
+                <li>AI (Artificial Intelligence), Claude, Claude Code, ChatGPT</li>
+                <li>Web services consumption and development (API REST, GraphQL)</li>
+                <li>Web App (WPA) development</li>
+                <li>CMS WordPress, Grav</li>
+                <li>Hotspot WiFi, Mikrotik, FreeRADIUS, <a href="https://github.com/lirantal/daloradius" target="_blank">daloRADIUS</a> <i>contributor</i></li>
+                <li>Hotel PMS integrations: <a href="https://cloudmarketplace.oracle.com/marketplace/en_US/listing/85226222" target="_blank">Oracle Opera</a>, Lean, Ulyses Cloud, Prestige, eZee and a lot more</li>
+                <li>CRM integrations: <a href="https://www.cendyn.com/crm/" target="_blank">PUSHTech</a> (now Cendyn)</li>
+                <li>IPTV integrations: Hibox Systems, <a href="http://kylone.com/" target="_blank">Kylone</a>, <a href="https://www.tbsdtv.com/tbs_iptv_solution.html" target="_blank">TBS</a>, Stalker / Ministra</li>
+                <li>Home automation integrations: Zennio, Jung, Omnitec Systems</li>
+                <li>Apache HTTP server, Apache Tomcat</li>
+                <li>Google Cloud</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="w3-row-padding">
+    <div class="w3-half">
+        <div class="w3-panel w3-card-4 w3-white">
+            <p class=""><i class="fa fa-user fa-fw w3-text-black"></i> <strong>Skills</strong></p>
+            <ul>
+                <li>Team leader and management</li>
+                <li>Project analysis and management</li>
+                <li>Team work, mentoring</li>
+                <li>Proactive</li>
+                <li>Committed</li>
+                <li>Always learning :)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="w3-half">
+        <div class="w3-panel w3-card-4 w3-white">
+            <p class=""><i class="fa fa-globe fa-fw w3-text-black"></i> <strong>Languages</strong></p>
+            <ul>
+                <li>Spanish <i>native</i></li>
+                <li>Valencian <i>native</i></li>
+                <li>English</li>
+                <li class="half-empty">
+                </li><li class="half-empty">
+                </li><li class="half-empty">
+            </li></ul>
+        </div>
+    </div>
+</div>
+<div class="w3-row-padding">
+    <div class="w3-half">
+        <div class="w3-panel w3-card-4 w3-white">
+            <p class=""><i class="fa fa-desktop fa-fw w3-text-black"></i> <strong>Platforms</strong></p>
+            <ul>
+                <li>Windows</li>
+                <li>Linux</li>
+                <li>Android <i>native with Java</i></li>
+                <li>iOS <i>native with Swift</i></li>
+                <li>World Wide Web ;)</li>
+                <li><a href="https://en.wikipedia.org/wiki/CP/M" target="_blank">CP/M</a> <i>¡what?</i></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="w3-half">
+        <div class="w3-panel w3-card-4 w3-white">
+            <p class=""><i class="fa fa-calculator fa-fw w3-text-black"></i> <strong>Applications</strong></p>
+            <ul>
+                <li>Microsoft productivity applications</li>
+                <li>Trello, Zoho, EasyRedmine, Jira, Microsoft Planner</li>
+                <li>Git, GitHub, GitLab</li>
+                <li>Eclipse IDE, PHP Storm IDE, Visual Studio Code, Android Studio, Notepad++</li>
+                <li>MySQL Workbench, HeidiSQL</li>
+                <li>PuTTY, FileZilla</li>
+            </ul>
+        </div>
+    </div>
+</div>  </div>
+
+  <!-- Footer -->
+  <br><br>
+  <footer class="w3-container">
+    <p class="">
+      &copy; 2026 Miguel I. Garc&iacute;a L&oacute;pez	  </p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.backgroundColor = 'transparent';
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.backgroundColor = '#fff';
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+<!--script src="js/app.js"></script-->
+
+</body>
+</html>

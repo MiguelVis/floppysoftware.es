@@ -1,0 +1,1 @@
+(c) 2026 Miguel I. García López / FloppySoftware. All rights reserved.

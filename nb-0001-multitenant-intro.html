@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FloppySoftware - Arquitectura multitenant (I)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
+  <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="" onload="">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="padding-right:0px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+  <!--span class="w3-bar-item">FloppySoftware</span-->
+  <span class="w3-bar-item"><img src="images/logo_floppy_software.png" alt="FloppySoftware logo"></span>
+  <!--span class="w3-bar-item w3-right">Logo</span-->
+  <!--span class="w3-right">
+	<a class="icon" href="index.html?lang=es"><img src="flag_es.png" alt="Español"></a>
+	<a class="icon" href="index.html?lang=en"><img src="flag_en.png" alt="Inglés"></a>
+  </span-->
+</div>
+
+<!-- Sidebar/menu -->
+
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row menu_title">
+	Developing software since 1987
+  </div>
+  <hr>
+  <div class="w3-bar-block">
+
+	<a href="index.html" class="w3-bar-item w3-button w3-padding menu-option" id="index">
+		<i class="fas fa-home fa-fw"></i>&nbsp; Home	</a>
+	<a href="projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Professional projects	</a>
+	<a href="my-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="my-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Personal projects	</a>
+	<a href="cpm-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="cpm-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; CP/M projects	</a>
+	<a href="pcw-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="pcw-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Amstrad PCW projects	</a>
+	<a href="notebook.html" class="w3-bar-item w3-button w3-padding menu-option menu-option-selected" id="notebook">
+		<i class="fas fa-pencil-alt fa-fw"></i>&nbsp; Notebook	</a>
+	<a href="downloads.html" class="w3-bar-item w3-button w3-padding menu-option" id="downloads">
+		<i class="fas fa-download fa-fw"></i>&nbsp; Downloads	</a>
+	<a href="links.html" class="w3-bar-item w3-button w3-padding menu-option" id="links">
+		<i class="fas fa-link fa-fw"></i>&nbsp; Links	</a>
+	<a href="terms-and-privacy.html" class="w3-bar-item w3-button w3-padding menu-option" id="terms-and-privacy">
+		<i class="fas fa-shield-alt fa-fw"></i>&nbsp; Terms & privacy	</a>
+
+	<br><br>
+  </div>
+</nav>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+  
+  <!-- Contents goes here -->
+  <div id="section_main" class="section_main">
+  		<div class="w3-container md">
+
+<script src="js/notebook_post.js"></script>
+
+<main class="w3-col s12 m8">
+    <div class="notebook-post-body">
+        <h1>
+            Arquitectura multitenant (I)        </h1>
+        <p style="font-size:80%">
+            August 5, 2021 | ES
+                    </p>
+        <p>
+            <img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+        </p>
+        <p>
+            Una introducción. Definición, ventajas e inconvenientes.        </p>
+                            <div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="arquitectura" onclick="notebook_post.clickExclusiveTagFilterByName('arquitectura');">
+                        arquitectura                    </div>
+                                    <div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="multitenant" onclick="notebook_post.clickExclusiveTagFilterByName('multitenant');">
+                        multitenant                    </div>
+                        <hr class="notebook-separator"/>
+        <h2>Introducción</h2>
+<p>La evolución en el desarrollo de software ha venido marcada por varios factores, entre ellos:</p>
+<ul>
+<li>Infraestructura (velocidad de proceso, capacidad de almacenamiento, ordenadores personales, dispositivos móviles, servidores).</li>
+<li>Sistemas operativos (multiusuario, multitarea, usuario final, servidores).</li>
+<li>Lenguajes de programación (objetos, multihilo, multiplataforma).</li>
+<li>Conectividad (Internet).</li>
+</ul>
+<p>Todos estos factores, han propiciado nuevos enfoques en la arquitectura de software, uno de ellos es el denominado multitenant.</p>
+<p>En las siguientes líneas, voy a tratar de definirlo y compararlo con el enfoque tradicional.</p>
+<p>Vayan por delante mis disculpas, por las informaciones erróneas o inexactas que pudieran aparecer en el texto.</p>
+<h2>La arquitectura monotenant</h2>
+<p>Este tipo de arquitectura de software, la más utilizada hasta fechas relativamente recientes, consiste en que cada instancia de la aplicación es utilizada por un único cliente a la vez.</p>
+<p>En cuanto al almacenamiento de los datos de la aplicación, la opción más sencilla y utilizada, suele ser la de una única base de datos por cliente.</p>
+<p>Suele ser la elección natural si la instalación se realiza en casa del cliente (on-premise) o en ordenadores personales.</p>
+<h2>La arquitectura multitenant</h2>
+<p>La característica principal que define la arquitectura multitenant, consiste en que una sola instancia de la aplicación (código en ejecución), es utilizada por varios clientes a la vez (tenants).</p>
+<p>En cuanto al almacenamiento y gestión de los datos de la aplicación, existen varios enfoques:</p>
+<ul>
+<li>Una base de datos por cada tenant.</li>
+<li>Una base de datos por cada tenant y otra compartida por todos ellos.</li>
+<li>Una base de datos compartida por todos los tenants.</li>
+</ul>
+<p>La elección de un enfoque u otro, dependerá de la aplicación en sí y de la infraestructura en la que se aloje, puesto que cada uno de ellos tiene sus ventajas e inconvenientes, como se verá en futuras entregas.</p>
+<h2>Qué no es multitenant</h2>
+<p>Determinadas aplicaciones desarrolladas según la arquitectura monotenant tradicional, permiten la gestión de más de un cliente, pero nunca a la vez.</p>
+<p>Son las típicas aplicaciones multiempresa, que permiten seleccionar aquella en la que queremos trabajar (software de contabilidad, facturación, etc.).</p>
+<p>En cuanto al almacenamiento y gestión de los datos, es aplicable lo indicado para la arquitectura multitenant.</p>
+<h2>Monotenant vs Multitenant</h2>
+<p>En la imagen siguiente, podemos ver las principales diferencias entre la arquitectura monotenant y la multitenant. </p>
+<p><img src="images/nb_multitenant_intro.png" alt="Monotenant vs Multitenant" title="Monotenant vs Multitenant" /></p>
+<h2>Ventajas e inconvenientes de las aplicaciones monotenant</h2>
+<p>Entre las ventajas de las aplicaciones monotenant, podemos encontrar:</p>
+<ul>
+<li>Mayor sencillez a la hora de plantearlas y desarrollarlas.</li>
+<li>Gestión de los datos más simple, de no ser que se adopte el enfoque multiempresa.</li>
+<li>Un fallo en la infraestructura on-premise afectará a un solo cliente.</li>
+<li>Un fallo en la aplicación afectará a varios clientes, dependiendo de las versiones instaladas en cada una de sus instalaciones.</li>
+<li>Un fallo en la integridad de los datos afectará a un solo cliente (on-premise).</li>
+<li>Un fallo de seguridad afectará a un cliente cada vez.</li>
+</ul>
+<p>Esta arquitectura también tiene inconvenientes, como pueden ser:</p>
+<ul>
+<li>Mayor laboriosidad en su despliegue y actualización, puesto que cada cliente ejecuta una instancia diferente de la aplicación (se ha de hacer múltiples veces, tantas como clientes la utilicen).</li>
+<li>Lo anterior también cabe aplicarlo a la gestión de copias de seguridad de los datos, pues se ha de hacer de forma independiente, para cada cliente.</li>
+<li>Consumo de mayores recursos en el caso de que estas aplicaciones sean desplegadas en servidores del proveedor de software (virtualización, varias copias de la aplicación, etc.).</li>
+</ul>
+<h2>Ventajas e inconvenientes de las aplicaciones multitenant</h2>
+<p>Algunas de las ventajas de esta arquitectura son:</p>
+<ul>
+<li>Despliegue y actualización más simples y rápidos, puesto que solo existe una aplicación a mantener.</li>
+<li>Menor complejidad en la gestión de copias de seguridad de los datos.</li>
+<li>Utilización de menores recursos, debido a la compartición del código de la aplicación.</li>
+<li>Es la elección natural en aplicaciones desplegadas en servidores en la nube.</li>
+</ul>
+<p>Entre las desventajas, cabe citar:</p>
+<ul>
+<li>Es imperativo que un cliente no pueda acceder a los datos de otro.</li>
+<li>La personalización de la aplicación para un cliente en concreto (funcionalidades específicas, integraciones con terceros), puede ser más compleja.</li>
+<li>Un fallo en la aplicación o la infraestructura afectará a múltiples clientes (en el peor de los casos, a todos).</li>
+<li>Un fallo en la integridad de los datos, afectará a varios clientes (o incluso a todos), dependiendo del enfoque de datos utilizado.</li>
+<li>Un fallo de seguridad afectará a todos los clientes.</li>
+<li>Requiere de una monitorización constante y planes de emergencia listos para entrar en acción ante cualquier contingencia.</li>
+</ul>
+<h2>Observaciones</h2>
+<p>A mi entender, en este tipo de cuestiones, no hay verdades absolutas, ganadores o perdedores, buenos o malos.</p>
+<p>Se podría argumentar que algunas de las ventajas enumeradas, tanto de una u otra arquitectura, si se analizan más a fondo o se tienen en cuenta otras consideraciones, puede que no sean tan absolutas. Lo mismo ocurre con los inconvenientes.</p>
+<p>Por citar un ejemplo del enfoque multitenant: "despliegue y actualización más simples y rápidos, puesto que solo existe una aplicación a mantener".</p>
+<p>Esto es cierto al 100%, si solamente tenemos en cuenta el hecho en sí, obviando otras consideraciones, de no poca importancia:</p>
+<ul>
+<li>¿Será necesario detener el servicio durante una actualización, afectando la actividad de todos los clientes?</li>
+<li>¿La nueva versión de la aplicación precisará de una alteración de la base de datos? ¿Correrá peligro la integridad de la misma?</li>
+<li>¿Disponemos de los planes de contingencia necesarios en el caso de una actualización fallida o problemática?</li>
+</ul>
+<p>Evidentemente, existen respuestas a cada uno de estos desafíos, pero todas ellas precisan de planificación y recursos, no siempre disponibles.</p>
+<p>Por otra parte, ¿tiene sentido desarrollar una aplicación multitenant a medida, para un único cliente? Obviamente, la respuesta es no.</p>
+<p>Además, se observará que las ventajas e inconvenientes citados, lo son desde el punto de vista de la empresa proveedora del software.</p>
+<p>Más adelante, trataremos de ver todo este asunto, desde la perspectiva del cliente.</p>
+<h2>Consideraciones finales</h2>
+<p>La elección de una arquitectura, en ocasiones depende de factores ajenos a la idoneidad de una u otra en un determinado contexto:</p>
+<ul>
+<li>Infraestructura disponible.</li>
+<li>Número de clientes interesados en la aplicación.</li>
+<li>Recursos económicos.</li>
+<li>Etc.</li>
+</ul>
+<p>En ocasiones, un enfoque acertado es tomar el camino de enmedio.</p>
+<p>Por ejemplo, vamos a desarrollar una aplicación que idealmente utilizarán muchos clientes simultáneamente, pero de momento no hay recursos, ni clientes.</p>
+<p>Una posibilidad sería realizar inicialmente una aplicación monotenant, e ir instalándola en servidores virtuales, uno por cada cliente. O en un mismo servidor, proporcionando para cada cliente un subdominio, el código de la aplicación y la base de datos.</p>
+<p>En el momento en que la situación lo permitiese, se refactorizarían determinadas partes de la aplicación, con el fin de adoptar un modelo multitenant.</p>
+<p>Para realizar la transición de forma no demasiado traumática, podríamos tener en consideración lo siguiente:</p>
+<ul>
+<li>Estructura interna de la aplicación, basada en configuración.</li>
+<li>Una base de datos por cada tenant.</li>
+</ul>
+<p>En próximas entregas, trataré de profundizar en los elementos más importantes que conforman la arquitectura multitenant.</p>    </div>
+
+    <!-- Pager -->
+
+    <div class="w3-display-container notebook-post-pager">
+                    <a class="w3-button w3-green w3-border w3-display-middle" href="notebook.html" title="Notebook">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+                            <a class="w3-button w3-green w3-border w3-display-right notebook-post-pager-button" href="nb-0002-multitenant-db.html" title="Arquitectura multitenant (II)"">
+                        Next &raquo;
+                    </a>
+                    </div>
+
+</main>
+
+<aside class="w3-col s12 m4 w3-right notebook-post-sidebar">
+    <div class="notebook-post-sidebar-box w3-border">
+        <div class="notebook-post-sidebar-box-title">
+            <span class="notebook-post-sidebar-box-title-text">See also</span>
+            <span class="w3-right"><i class="fas fa-hand-point-down"></i></span>
+        </div>
+                            <a href="nb-0006-ia.html" class="notebook-post-link-random-post">
+                        La IA te amplifica y tal.                    </a>
+                    <br>
+                    <div style="font-size:80%">
+                        December 27, 2025                    </div>
+                                                    <hr class="notebook-separator">
+                                                                <a href="nb-0008-aspiradora.html" class="notebook-post-link-random-post">
+                        La letra pequeña de los algoritmos. Cómo se las gasta mi robot aspirador.                    </a>
+                    <br>
+                    <div style="font-size:80%">
+                        April 15, 2026                    </div>
+                                                    <hr class="notebook-separator">
+                                                                <a href="nb-0002-multitenant-db.html" class="notebook-post-link-random-post">
+                        Almacenamiento y gestión de los datos.                    </a>
+                    <br>
+                    <div style="font-size:80%">
+                        August 28, 2021                    </div>
+                                        </div>
+</aside>
+
+		</div>
+  </div>
+
+  <!-- Footer -->
+  <br><br>
+  <footer class="w3-container">
+    <p class="">
+      &copy; 2026 Miguel I. Garc&iacute;a L&oacute;pez	  </p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.backgroundColor = 'transparent';
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.backgroundColor = '#fff';
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+<!--script src="js/app.js"></script-->
+
+</body>
+</html>

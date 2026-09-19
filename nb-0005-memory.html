@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FloppySoftware - La memoria</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
+  <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="" onload="">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="padding-right:0px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+  <!--span class="w3-bar-item">FloppySoftware</span-->
+  <span class="w3-bar-item"><img src="images/logo_floppy_software.png" alt="FloppySoftware logo"></span>
+  <!--span class="w3-bar-item w3-right">Logo</span-->
+  <!--span class="w3-right">
+	<a class="icon" href="index.html?lang=es"><img src="flag_es.png" alt="Español"></a>
+	<a class="icon" href="index.html?lang=en"><img src="flag_en.png" alt="Inglés"></a>
+  </span-->
+</div>
+
+<!-- Sidebar/menu -->
+
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row menu_title">
+	Developing software since 1987
+  </div>
+  <hr>
+  <div class="w3-bar-block">
+
+	<a href="index.html" class="w3-bar-item w3-button w3-padding menu-option" id="index">
+		<i class="fas fa-home fa-fw"></i>&nbsp; Home	</a>
+	<a href="projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Professional projects	</a>
+	<a href="my-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="my-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Personal projects	</a>
+	<a href="cpm-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="cpm-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; CP/M projects	</a>
+	<a href="pcw-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="pcw-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Amstrad PCW projects	</a>
+	<a href="notebook.html" class="w3-bar-item w3-button w3-padding menu-option menu-option-selected" id="notebook">
+		<i class="fas fa-pencil-alt fa-fw"></i>&nbsp; Notebook	</a>
+	<a href="downloads.html" class="w3-bar-item w3-button w3-padding menu-option" id="downloads">
+		<i class="fas fa-download fa-fw"></i>&nbsp; Downloads	</a>
+	<a href="links.html" class="w3-bar-item w3-button w3-padding menu-option" id="links">
+		<i class="fas fa-link fa-fw"></i>&nbsp; Links	</a>
+	<a href="terms-and-privacy.html" class="w3-bar-item w3-button w3-padding menu-option" id="terms-and-privacy">
+		<i class="fas fa-shield-alt fa-fw"></i>&nbsp; Terms & privacy	</a>
+
+	<br><br>
+  </div>
+</nav>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+  
+  <!-- Contents goes here -->
+  <div id="section_main" class="section_main">
+  		<div class="w3-container md">
+
+<script src="js/notebook_post.js"></script>
+
+<main class="w3-col s12 m8">
+    <div class="notebook-post-body">
+        <h1>
+            La memoria        </h1>
+        <p style="font-size:80%">
+            July 1, 2025 | ES
+                    </p>
+        <p>
+            <img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+        </p>
+        <p>
+            La memoria (o falta de ella). Me refiero a la RAM.        </p>
+                            <div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="lenguaje-c" onclick="notebook_post.clickExclusiveTagFilterByName('lenguaje-c');">
+                        lenguaje-c                    </div>
+                        <hr class="notebook-separator"/>
+        <p>Una cosa que te enseña el lenguaje C (por eso me gusta tanto), es a controlar en todo momento lo que estás haciendo.</p>
+<p>Algo odiado y amado a partes desiguales, son los punteros.</p>
+<p>Los punteros, dicho pronto y mal, son variables que apuntan a una dirección de la memoria (RAM, ROM y esas cosas).</p>
+<p>Eso, de por sí, ya da repelús al taitantos por ciento de los programadores (mogollón, no nos engañemos).</p>
+<p>Y si los mezclamos con malloc() y free(), las constantes vitales de la mayoría se van al garete.</p>
+<p>Y total, ¿por qué? Porque es incómodo (un peñazo, un rollo, un me aburre, con lo bien que estaba yo sin esto), tener que estar con el ojo derecho viendo lo que escribimos, y con el izquierdo no perdiendo de vista al susodicho puntero de tres líneas más arriba.</p>
+<p>Y si son dos, el desmadre emocional es insostenible, esperable e irreprimible, todo acaba en "ible". Terrible, horrible, insufrible... vale, lo dejo ya.</p>
+<p>Y entonces, ¿por qué me gusta tanto el lenguaje C? ¿Me gusta sufrir? ¿No salgo de mi zona de no-confort?</p>
+<p>Pues no: porque se aprende la tira.</p>
+<p>Hay programadores que creen que la memoria es infinita. Pues no, es finita (y no me refiero a tener tipín), se acaba, no hay más, te apañas con lo que hay, deja algo para los demás.</p>
+<p>Y por eso, la memoria, hay que utilizarla sin abusar, lo justo, lo necesario, como si cada byte te costara un euro. A ti.</p>
+<p>Y en eso, el lenguaje C, es el mejor profesor. A las malas, eso sí, pero aprendes o te largas a hacer encaje de bolillos.</p>
+<p>Y llega el turno de las anécdotas.</p>
+<p>Recuerdo como si fuera hace seis años (como ayer no, para qué nos vamos a engañar), el día que nos petó en toda la cara, y en producción, una funcionalidad que mostraba, tras consultar una API de terceros en tiempo real, una serie de datos.</p>
+<p>Pues bien, el error vino originado porque la API devolvía unos trescientos trillones de objetos (usuarios conectados a la red wifi, y no diré más si no es en presencia de mi confesor) y, claro, aquello petaba que daba gusto (es un decir).</p>
+<p>Era un proceso PHP y, por configuración, no se le podía asignar más de 8 MB de memoria (algo así).</p>
+<p>El compi que desarrolló esta funcionalidad, encontró una solución: subir a 16 MB.</p>
+<p>Al día siguiente, tuvo que subir a 32. Al otro, a 64. Y así, hasta que aquello no iba ni para atrás. Vamos, que de petar no lo salvaba nadie.</p>
+<p>Eso, sin contar que se tiraba nosecuántos minutos procesando el mogollón.</p>
+<p>A todo esto, el cliente hecho una furia, ¡qué poca paciencia, ni que hubiese pagado por ello!</p>
+<p>Y, por fin, un día, encontró la solución definitiva. Me dijo: ¡Miguel, ya no salta el error!</p>
+<p>Yo no cabía en mí de gozo, de ilusión, de alegría, de llevar una talla menos de pantalón.</p>
+<p>¿Y qué has hecho? Pregunté, con la mente abierta, ávida, deseando aprender de un gurú como aquél.</p>
+<ul>
+<li>He quitado el botón.</li>
+</ul>
+<p>Todavía sufro secuelas.</p>
+<p>Lo peor: es cierto. Lo mejor: sobreviví para contarlo.</p>
+<p>Y para finalizar, el "Hello World!" de toda la vida, en C, pero complicado.</p>
+<p><img src="images/nb_hello_world.jpg" alt="Hello world!" title="Hello world!" /></p>    </div>
+
+    <!-- Pager -->
+
+    <div class="w3-display-container notebook-post-pager">
+                            <a class="w3-button w3-green w3-border w3-display-left notebook-post-pager-button" href="nb-0004-mentoring.html" title="Mentoría programador@s Junior">
+                        &laquo; Previous
+                    </a>
+                            <a class="w3-button w3-green w3-border w3-display-middle" href="notebook.html" title="Notebook">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+                            <a class="w3-button w3-green w3-border w3-display-right notebook-post-pager-button" href="nb-0006-ia.html" title="IA"">
+                        Next &raquo;
+                    </a>
+                    </div>
+
+</main>
+
+<aside class="w3-col s12 m4 w3-right notebook-post-sidebar">
+    <div class="notebook-post-sidebar-box w3-border">
+        <div class="notebook-post-sidebar-box-title">
+            <span class="notebook-post-sidebar-box-title-text">See also</span>
+            <span class="w3-right"><i class="fas fa-hand-point-down"></i></span>
+        </div>
+                            <a href="nb-0012-fullstack.html" class="notebook-post-link-random-post">
+                        El ¿mito? del programador fullstack en tiempos de la IA.                    </a>
+                    <br>
+                    <div style="font-size:80%">
+                        July 20, 2026                    </div>
+                                                    <hr class="notebook-separator">
+                                                                <a href="nb-0009-ten-years.html" class="notebook-post-link-random-post">
+                        Diez años trabajando en NETHITS. Y han pasado volando.                    </a>
+                    <br>
+                    <div style="font-size:80%">
+                        June 04, 2026                    </div>
+                                                    <hr class="notebook-separator">
+                                                                <a href="nb-0002-multitenant-db.html" class="notebook-post-link-random-post">
+                        Almacenamiento y gestión de los datos.                    </a>
+                    <br>
+                    <div style="font-size:80%">
+                        August 28, 2021                    </div>
+                                        </div>
+</aside>
+
+		</div>
+  </div>
+
+  <!-- Footer -->
+  <br><br>
+  <footer class="w3-container">
+    <p class="">
+      &copy; 2026 Miguel I. Garc&iacute;a L&oacute;pez	  </p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.backgroundColor = 'transparent';
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.backgroundColor = '#fff';
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+<!--script src="js/app.js"></script-->
+
+</body>
+</html>

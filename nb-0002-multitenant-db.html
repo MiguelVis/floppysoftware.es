@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FloppySoftware - Arquitectura multitenant (II)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
+  <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="" onload="">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="padding-right:0px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+  <!--span class="w3-bar-item">FloppySoftware</span-->
+  <span class="w3-bar-item"><img src="images/logo_floppy_software.png" alt="FloppySoftware logo"></span>
+  <!--span class="w3-bar-item w3-right">Logo</span-->
+  <!--span class="w3-right">
+	<a class="icon" href="index.html?lang=es"><img src="flag_es.png" alt="Español"></a>
+	<a class="icon" href="index.html?lang=en"><img src="flag_en.png" alt="Inglés"></a>
+  </span-->
+</div>
+
+<!-- Sidebar/menu -->
+
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row menu_title">
+	Developing software since 1987
+  </div>
+  <hr>
+  <div class="w3-bar-block">
+
+	<a href="index.html" class="w3-bar-item w3-button w3-padding menu-option" id="index">
+		<i class="fas fa-home fa-fw"></i>&nbsp; Home	</a>
+	<a href="projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Professional projects	</a>
+	<a href="my-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="my-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Personal projects	</a>
+	<a href="cpm-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="cpm-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; CP/M projects	</a>
+	<a href="pcw-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="pcw-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Amstrad PCW projects	</a>
+	<a href="notebook.html" class="w3-bar-item w3-button w3-padding menu-option menu-option-selected" id="notebook">
+		<i class="fas fa-pencil-alt fa-fw"></i>&nbsp; Notebook	</a>
+	<a href="downloads.html" class="w3-bar-item w3-button w3-padding menu-option" id="downloads">
+		<i class="fas fa-download fa-fw"></i>&nbsp; Downloads	</a>
+	<a href="links.html" class="w3-bar-item w3-button w3-padding menu-option" id="links">
+		<i class="fas fa-link fa-fw"></i>&nbsp; Links	</a>
+	<a href="terms-and-privacy.html" class="w3-bar-item w3-button w3-padding menu-option" id="terms-and-privacy">
+		<i class="fas fa-shield-alt fa-fw"></i>&nbsp; Terms & privacy	</a>
+
+	<br><br>
+  </div>
+</nav>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+  
+  <!-- Contents goes here -->
+  <div id="section_main" class="section_main">
+  		<div class="w3-container md">
+
+<script src="js/notebook_post.js"></script>
+
+<main class="w3-col s12 m8">
+    <div class="notebook-post-body">
+        <h1>
+            Arquitectura multitenant (II)        </h1>
+        <p style="font-size:80%">
+            August 28, 2021 | ES
+                    </p>
+        <p>
+            <img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+        </p>
+        <p>
+            Almacenamiento y gestión de los datos.        </p>
+                            <div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="arquitectura" onclick="notebook_post.clickExclusiveTagFilterByName('arquitectura');">
+                        arquitectura                    </div>
+                                    <div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="multitenant" onclick="notebook_post.clickExclusiveTagFilterByName('multitenant');">
+                        multitenant                    </div>
+                                    <div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="base-de-datos" onclick="notebook_post.clickExclusiveTagFilterByName('base-de-datos');">
+                        base-de-datos                    </div>
+                        <hr class="notebook-separator"/>
+        <h2>Introducción</h2>
+<p>Tal y como se vio en la anterior entrega, los planteamientos más utilizados a la hora de definir el almacenamiento y gestión de los datos en un entorno multitenant, suelen ser:</p>
+<ul>
+<li>Una base de datos por cada tenant.</li>
+<li>Una base de datos por cada tenant y otra compartida por todos ellos.</li>
+<li>Una base de datos compartida por todos los tenants.</li>
+</ul>
+<p>Cada uno de estos enfoques tiene sus ventajas e inconvenientes, e incluso una mayor orientación a determinado tipo de aplicaciones, por lo que voy a tratar cada uno de ellos por separado.</p>
+<p>Conviene recordar, que sea cual sea el planteamiento seleccionado, es de vital importancia la estanqueidad de los datos de cada tenant, es decir, un tenant no debería poder acceder jamás a los datos de otro.</p>
+<p><img src="images/nb_multitenant_db.png" alt="Enfoques Multitenant" title="Enfoques Multitenant" /></p>
+<h2>Una base de datos por tenant</h2>
+<p>Bajo mi punto de vista, este planteamiento es el que mayor flexibilidad y posibilidades ofrece, al tiempo que plantea menos complicaciones en cuanto a gestión de los datos.</p>
+<p>Dado que cada tenant tiene su propia base de datos, la estanqueidad de los mismos está asegurada.</p>
+<p>Por otra parte, este sistema puede facilitar la gestión de actualizaciones del software, ya que, si la aplicación lo permite, sería posible la coexistencia de diferentes versiones del esquema de la base de datos.</p>
+<p>Esto permitiría escalonar la actualización del esquema de la base de datos, según nuestras necesidades o la de nuestros clientes.</p>
+<p>Una desventaja de este enfoque es la gestión de usuarios administradores de la aplicación (es decir, nuestros usuarios, no los de cada tenant).</p>
+<p>Son los usuarios (superusuarios, si se prefiere) que tienen potestad para gestionar tenants, actualizar el esquema de la base de datos, monitorizar la aplicación, etc.</p>
+<p>Al tener una base de datos por cada tenant, no quedaría más remedio que almacenar los mismos usuarios administradores en cada una de ellas, complicando su gestión y utilizando mayor espacio de almacenamiento.</p>
+<p>Este problema se agudiza si, además, almacenamos en la base de datos determinados valores de configuración de ámbito global de la aplicación.</p>
+<h2>Una base de datos por tenant más otra compartida</h2>
+<p>Este enfoque es idéntico al anterior, es decir, una base de datos para cada tenant, con una variación importante, la de añadir otra base de datos compartida por todos ellos.</p>
+<p>La función de dicha base de datos compartida, sería la de almacenar los usuarios administradores de la aplicación, así como la configuración global de la misma, en caso de existir.</p>
+<p>De esta forma, se facilitaría la gestión de la aplicación.</p>
+<h2>Una base de datos compartida por los tenants</h2>
+<p>Este planteamiento, tiene como ventaja más obvia el que únicamente debemos gestionar una base de datos.</p>
+<p>En cuanto a la actualización del esquema de la base de datos, tiene como ventaja que dicha actualización tendrá efecto sobre todos los tenants, lo cual, según se mire, puede acabar siendo una desventaja, en el caso de que se produzca algún tipo de problema tras realizar el proceso.</p>
+<p>Por otra parte, es de esperar una mayor dificultad a la hora de mantener la estanqueidad e integridad de los datos de cada tenant.</p>
+<p>Si en los enfoques anteriores identificábamos los datos de un tenant a nivel de base de datos, en este caso tendríamos que hacerlo a un nivel inferior.</p>
+<p>Un par de posibilidades serían:</p>
+<ul>
+<li>a nivel de tablas.</li>
+<li>a nivel de registros.</li>
+</ul>
+<p>Una forma de relacionar las tablas con un tenant determinado, podría ser mediante la utilización de prefijos en los nombres de las mismas.</p>
+<p>Por ejemplo, si al tenant "Técnicos de Investigación Aeroterráquea", le asignáramos el prefijo "TIA", sería posible nombrar las tablas como sigue:</p>
+<ul>
+<li>TIA_agentes</li>
+<li>TIA_casos</li>
+</ul>
+<p>De esta forma, la aplicación tan solo necesitaría conocer el prefijo correspondiente al tenant, para trabajar con las tablas correctas.</p>
+<p>Es necesario señalar, que este enfoque podría entrar en conflicto, con el número máximo de tablas que permita gestionar el motor de base de datos.</p>
+<p>En cuanto a la identificación del tenant a nivel de registros, sería preciso establecer una columna (campo, atributo...) en todas las tablas, que almacenase dicho dato.</p>
+<p>Por ejemplo, en la tabla agentes:</p>
+<ul>
+<li>tenant_id</li>
+<li>agente_id</li>
+<li>nombre</li>
+<li>apellidos</li>
+<li>numero_placa</li>
+</ul>
+<p>Este planteamiento, más común de lo que pudiera parecer, complica en mucho la gestión de los datos, influyendo en el código de la aplicación, ya que cada entidad de la misma, ha de tener dicho atributo.</p>
+<p>Por otra parte, la gestión de los usuarios administradores y los valores de configuración, no debería plantear problema alguno, ya que sus datos se almacenarán en sus correspondientes tablas.</p>
+<h2>Conclusiones</h2>
+<p>En mi opinión, el enfoque más interesante es el correspondiente a una base de datos por tenant más otra compartida, pues permite:</p>
+<ul>
+<li>estanqueidad de los datos de cada tenant.</li>
+<li>coexistencia de diferentes versiones del esquema de la base de datos.</li>
+<li>gestión más sencilla de los usuarios administradores y la configuración de la aplicación.</li>
+</ul>
+<p>Por otra parte, tal y como se indicó en la anterior entrega, siempre hay que tener en cuenta determinados factores que podrían inclinar la balanza hacia una solución de compromiso, aunque técnicamente no sea la mejor:</p>
+<ul>
+<li>Infraestructura disponible.</li>
+<li>Recursos económicos.</li>
+<li>Etc.</li>
+</ul>
+<p>En la próxima entrega, trataré de profundizar en la parte de aplicación.</p>    </div>
+
+    <!-- Pager -->
+
+    <div class="w3-display-container notebook-post-pager">
+                            <a class="w3-button w3-green w3-border w3-display-left notebook-post-pager-button" href="nb-0001-multitenant-intro.html" title="Arquitectura multitenant (I)">
+                        &laquo; Previous
+                    </a>
+                            <a class="w3-button w3-green w3-border w3-display-middle" href="notebook.html" title="Notebook">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+                            <a class="w3-button w3-green w3-border w3-display-right notebook-post-pager-button" href="nb-0003-about-mentoring.html" title="Sobre las mentorías"">
+                        Next &raquo;
+                    </a>
+                    </div>
+
+</main>
+
+<aside class="w3-col s12 m4 w3-right notebook-post-sidebar">
+    <div class="notebook-post-sidebar-box w3-border">
+        <div class="notebook-post-sidebar-box-title">
+            <span class="notebook-post-sidebar-box-title-text">See also</span>
+            <span class="w3-right"><i class="fas fa-hand-point-down"></i></span>
+        </div>
+                            <a href="nb-0013-bottleneck.html" class="notebook-post-link-random-post">
+                        El cuello de botella del software en tiempos del x10. O el x100. O el x1000.                    </a>
+                    <br>
+                    <div style="font-size:80%">
+                        September 9, 2026                    </div>
+                                                    <hr class="notebook-separator">
+                                                                <a href="nb-0012-fullstack.html" class="notebook-post-link-random-post">
+                        El ¿mito? del programador fullstack en tiempos de la IA.                    </a>
+                    <br>
+                    <div style="font-size:80%">
+                        July 20, 2026                    </div>
+                                                    <hr class="notebook-separator">
+                                                                <a href="nb-0006-ia.html" class="notebook-post-link-random-post">
+                        La IA te amplifica y tal.                    </a>
+                    <br>
+                    <div style="font-size:80%">
+                        December 27, 2025                    </div>
+                                        </div>
+</aside>
+
+		</div>
+  </div>
+
+  <!-- Footer -->
+  <br><br>
+  <footer class="w3-container">
+    <p class="">
+      &copy; 2026 Miguel I. Garc&iacute;a L&oacute;pez	  </p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.backgroundColor = 'transparent';
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.backgroundColor = '#fff';
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+<!--script src="js/app.js"></script-->
+
+</body>
+</html>

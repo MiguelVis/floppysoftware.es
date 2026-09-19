@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FloppySoftware - SamaruX</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
+  <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="" onload="">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="padding-right:0px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+  <!--span class="w3-bar-item">FloppySoftware</span-->
+  <span class="w3-bar-item"><img src="images/logo_floppy_software.png" alt="FloppySoftware logo"></span>
+  <!--span class="w3-bar-item w3-right">Logo</span-->
+  <!--span class="w3-right">
+	<a class="icon" href="index.html?lang=es"><img src="flag_es.png" alt="Español"></a>
+	<a class="icon" href="index.html?lang=en"><img src="flag_en.png" alt="Inglés"></a>
+  </span-->
+</div>
+
+<!-- Sidebar/menu -->
+
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row menu_title">
+	Developing software since 1987
+  </div>
+  <hr>
+  <div class="w3-bar-block">
+
+	<a href="index.html" class="w3-bar-item w3-button w3-padding menu-option" id="index">
+		<i class="fas fa-home fa-fw"></i>&nbsp; Home	</a>
+	<a href="projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Professional projects	</a>
+	<a href="my-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="my-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Personal projects	</a>
+	<a href="cpm-projects.html" class="w3-bar-item w3-button w3-padding menu-option menu-option-selected" id="cpm-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; CP/M projects	</a>
+	<a href="pcw-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="pcw-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Amstrad PCW projects	</a>
+	<a href="notebook.html" class="w3-bar-item w3-button w3-padding menu-option" id="notebook">
+		<i class="fas fa-pencil-alt fa-fw"></i>&nbsp; Notebook	</a>
+	<a href="downloads.html" class="w3-bar-item w3-button w3-padding menu-option" id="downloads">
+		<i class="fas fa-download fa-fw"></i>&nbsp; Downloads	</a>
+	<a href="links.html" class="w3-bar-item w3-button w3-padding menu-option" id="links">
+		<i class="fas fa-link fa-fw"></i>&nbsp; Links	</a>
+	<a href="terms-and-privacy.html" class="w3-bar-item w3-button w3-padding menu-option" id="terms-and-privacy">
+		<i class="fas fa-shield-alt fa-fw"></i>&nbsp; Terms & privacy	</a>
+
+	<br><br>
+  </div>
+</nav>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+  
+  <!-- Contents goes here -->
+  <div id="section_main" class="section_main">
+  		<div class="w3-container md">
+<div class="software-project-body">
+    <h1>
+        SamaruX    </h1>
+                <p>
+                <i class="fab fa-github"></i> <a href="https://github.com/MiguelVis/samarux" target="_blank" title="GitHub repository">https://github.com/MiguelVis/samarux</a>
+            </p>
+        <hr class="software-project-separator"/>
+    <p>SamaruX is a <strong>Unix-like shell</strong> for the <strong>CP/M</strong> operating system &amp; the <strong>Z80</strong> CPU.</p>
+<p>It has been developed with MESCC, my Small-C compiler version for CP/M and Z80.</p>
+<p><img src="images/cpm-samarux.jpg" alt="SamaruX image" title="SamaruX image" /></p>
+<h2>Overview</h2>
+<p>This document is not an exhaustive reference of SamaruX, but only an overview, in order to show some of its capabilities. Please, refer to the manual for a complete description.</p>
+<p>Instead of write separate commands for each task as in real Unix, the shell has some built-in commands.</p>
+<p>Of course, it's not at all a new idea (see <a href="https://busybox.net/">BusyBox</a>, for example), but I believe this scheme has a lot of advantages in a small environment like CP/M.</p>
+<p>For example, we can save some bytes on disk by joining some commands in one file, instead of writing them as separated ones, because we don't have to repeat some shared code in each of them.</p>
+<p>Anyway, the last versions of SamaruX support the development of external commands too (some of them are included as examples).</p>
+<p>Obviously, SamaruX doesn't have all functionalities of Unix, but it has some nice and useful commands, to work in a Unix-like system, under our beloved CP/M operating system.</p>
+<p>Some SamaruX functionalities are:</p>
+<ul>
+<li>Redirection of stdin and stdout with &gt; and &lt;.</li>
+<li>Piping with |.</li>
+<li>Environment with variables $TERM, $USER, $LINES, $COLUMNS, $TMPDIR, $HOME, $BINDIR, $MANPATH, etc.</li>
+<li>Names for directories.</li>
+<li>Command line history.</li>
+<li>Profiling for environment customization.</li>
+<li>Command aliasing.</li>
+<li>Batch processing with flow control and arguments passing.</li>
+<li>Complete on-line manual.</li>
+<li>Prompt customization.</li>
+<li>Built-in commands: cp, rm, mv, man, cat, more, grep, cd, date, mem, sort, wc, tee, diralias, etc.</li>
+<li>External commands: banner, whoami, robots, cal, head, strings ...</li>
+</ul>
+<h2>Named directories</h2>
+<p>With the use of <code>diralias</code>, you can reference a directory (drive and user number) with a name - ie:</p>
+<pre><code>diralias system a0:
+diralias temp m0:
+diralias mescc a3:
+
+cat mescc:sx.c | more
+ls system:*.x
+cd temp:</code></pre>
+<p>It's a good idea to include the <code>diralias</code> commands in the SamaruX profile.</p>
+<h2>Executing SamaruX external commands</h2>
+<p>Like in previous releases, SamaruX will search the external command files in the directory specified in the environment variable <code>BINDIR</code>:</p>
+<pre><code>env BINDIR system:</code></pre>
+<p>It this variable does not exists, or it's not valid, SamaruX will search the external command files in the current working directory.</p>
+<p>If you prefix the filename with a directory, Samarux will search the external command file there:</p>
+<pre><code>mescc:cc myprog</code></pre>
+<p>You can force SamaruX to search a external command file in the current working directory, if you prefix the filename with the character <code>:</code>, as in:</p>
+<pre><code>:cc</code></pre>
+<h2>Searching manuals</h2>
+<p>SamaruX will seach the manual files in the directory specified in the environment variable <code>MANPATH</code>:</p>
+<pre><code>env MANPATH manuals:</code></pre>
+<p>It this variable does not exists, or it's not valid, SamaruX will search the manual files in the current working directory.</p>
+<p>If you prefix the filename with a directory, Samarux will search the manual file there:</p>
+<pre><code>man mescc:help stdio</code></pre>
+<p>You can force SamaruX to search a manual file in the current working directory, if you prefix the filename with the character <code>:</code>, as in:</p>
+<pre><code>man :help stdio</code></pre>
+<h2>Compilation hints</h2>
+<p>Compile SamaruX with <code>SX_MINIMAL</code> for a minimal number of built-in commands. Then execute <code>make_all_ext2</code> to build the excluded built-in commands as external.</p>
+<h2>Execution modes</h2>
+<p>There are two execution modes:</p>
+<ul>
+<li>CP/M mode: The SamaruX shell will execute only a command and will return to CP/M.</li>
+<li>Interactive mode: The SamaruX shell will read and execute your commands from the keyboard, until you return to CP/M.</li>
+</ul>
+<p>CP/M mode example:</p>
+<pre><code>A&gt;sx echo Hello world!
+Hello world!
+
+A&gt;</code></pre>
+<p>Interactive mode example:</p>
+<pre><code>A&gt;sx
+Samarux v1.00 / 29 Dec 2014 - (c) FloppySoftware, Spain
+
+CP/M version 2.2
+
+28 built-in commands
+
+Hi FloppySoftware welcome to Samarux!
+
+[FloppySoftware at B00:] $ env
+TERM = vt52
+USER = FloppySoftware
+PROMPT = [%u at %w] %$
+
+[FloppySoftware at B00:] $ exit
+
+A&gt;</code></pre>
+<h2>Profiling</h2>
+<p>With profiling, you can customize your SamaruX environment.</p>
+<p>Its use it's not compulsory, but highly recommended (and useful).</p>
+<p>There are two files for profiling::</p>
+<ul>
+<li><code>profile.sx</code>: For the CP/M mode.</li>
+<li><code>profcpm.sx</code>: For the interactive mode.</li>
+</ul>
+<p>An example of profiling in interactive mode:</p>
+<pre><code># -------------------------- #
+# SAMARUX START-UP PROFILE   #
+# -------------------------- #
+env TERM vt52
+env USER FloppySoftware
+env PROMPT [%u at %w] %$
+#
+alias h history 0
+alias logout exit
+#
+echo Hi $USER welcome to Samarux!
+echo</code></pre>
+<h2>Piping and redirection</h2>
+<p>With SamaruX, you can enter useful command lines like:</p>
+<pre><code>cat letter.txt | more
+grep 'Gary Kildall' cpm.txt article.doc news.txt &gt; refs.txt
+ls -l *.h *.c &gt; cfiles.txt
+man cat | more</code></pre>
+<h2>Command line</h2>
+<p>You can separate commands in the same line with the semicolon <code>;</code>:</p>
+<pre><code>man cp &gt; cp.txt ; clear ; cat cp.txt | more</code></pre>
+<p>You can include environment variables in your command lines:</p>
+<pre><code>env NAME Julius ; echo My name is $NAME</code></pre>
+<p>An argument can contain spaces if it is surrounded by single quotes <code>'</code>:</p>
+<pre><code>env NAME 'Julius Smith' ; echo My name is $NAME</code></pre>
+<p>SamaruX has a command line history facility.</p>
+<p>To see the history, just type:</p>
+<pre><code>history</code></pre>
+<p>And the history command will reply something like:</p>
+<pre><code>$ history
+0: cat manual.doc | more
+1: ed letter.txt
+2: ls *.c
+3: man cat</code></pre>
+<p>To select a history command entry, just type its number:</p>
+<pre><code>history 2</code></pre>
+<p>And the shell will present a command line, ready to be edited and / or executed:</p>
+<pre><code>$ ls *.c</code></pre>
+<p>Executing CP/M commands</p>
+<p>You can execute CP/M commands by using the cpm command:</p>
+<pre><code>cpm PIP A:=M:*.COM</code></pre>
+<p>You will return to SamaruX, once the CP/M command had finished its work.</p>
+<h2>Aliases</h2>
+<p>You can make aliases for your most frequently used commands:</p>
+<pre><code>alias dirall ls -f</code></pre>
+<p>Then, you can enter the defined alias as a single word:</p>
+<pre><code>dirall</code></pre>
+<h2>Small text editor</h2>
+<p>SamaruX has the <code>ed</code> command, a very humble text editor, but very useful to create and edit small text files in a fast way.</p>
+<pre><code>$ ed profile.sx
+File :  profile.sx
+Lines:  14/48
+ed&gt; print
+    0: # -------------------------- #
+    1: # SAMARUX START-UP PROFILE   #
+    2: # -------------------------- #
+    3: # env HOME A00:
+    4: env TERM vt52
+    5: # env TEMP M00:
+    6: env USER FloppySoftware
+    7: env PROMPT [%u at %w] %$
+    8: #
+    9: alias h history 0
+   10: alias logout exit
+   11: #
+   12: echo Hi $USER welcome to Samarux!
+   13: echo
+ed&gt; edit 8
+    8: # This is a comment</code></pre>
+<h2>Help!</h2>
+<p>SamaruX has a built-in command named <code>man</code>, to offer on-line help about commands an other topics.</p>
+<p>The help contents is stored in the <code>samarux.man</code> file.</p>
+<p>As this file is an ordinary text file with a simple structure, you can even add or modify topics.</p>
+<p>To see the available topics, just type:</p>
+<pre><code>man | more</code></pre>
+<p>To read about a topic in particular, say <code>cat</code>, just type:</p>
+<pre><code>man cat | more</code></pre>
+<p>In addition to this, SamaruX has a built-in command named <code>builtin</code>, that prints the name of all available built-in commands. Just type:</p>
+<pre><code>builtin</code></pre>
+<h2>Batch processing and flow control</h2>
+<p>With the <code>batch</code> command, you can process files with commands as if they were typed on the keyboard.</p>
+<p>Some other SamaruX commands will help you with flow control in batch processing:</p>
+<pre><code>if
+goto
+read
+exit</code></pre>
+<p>An example:</p>
+<pre><code># ----------- #
+# TEST SCRIPT #
+# ----------- #
+#
+echo Test Script
+echo ===========
+# Menu:
+echo
+echo 1 : Option One
+echo 2 : Option Two
+echo 0 : Exit
+echo
+echo -n Your choice:
+read OP
+echo
+if $OP eq 1 goto One
+if $OP eq 2 goto Two
+if $OP eq 0 goto Exit
+echo Bad choice, try again.
+goto Menu
+# One:
+echo Your choice was Option One.
+goto Menu
+# Two:
+echo Your choice was Option Two.
+goto Menu
+# Exit:
+env OP</code></pre>
+<p>You can include arguments in batch processing.</p>
+<p>If you have a file named <code>write.sx</code> with this contents:</p>
+<pre><code>echo $1 $2 $3</code></pre>
+<p>And you type:</p>
+<pre><code>batch write.sx How are you?</code></pre>
+<p>The system will reply with:</p>
+<pre><code>How are you?</code></pre></div>
+		</div>
+  </div>
+
+  <!-- Footer -->
+  <br><br>
+  <footer class="w3-container">
+    <p class="">
+      &copy; 2026 Miguel I. Garc&iacute;a L&oacute;pez	  </p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.backgroundColor = 'transparent';
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.backgroundColor = '#fff';
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+<!--script src="js/app.js"></script-->
+
+</body>
+</html>

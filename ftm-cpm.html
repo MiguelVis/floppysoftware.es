@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FloppySoftware - Find that mine!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
+  <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="" onload="">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="padding-right:0px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+  <!--span class="w3-bar-item">FloppySoftware</span-->
+  <span class="w3-bar-item"><img src="images/logo_floppy_software.png" alt="FloppySoftware logo"></span>
+  <!--span class="w3-bar-item w3-right">Logo</span-->
+  <!--span class="w3-right">
+	<a class="icon" href="index.html?lang=es"><img src="flag_es.png" alt="Español"></a>
+	<a class="icon" href="index.html?lang=en"><img src="flag_en.png" alt="Inglés"></a>
+  </span-->
+</div>
+
+<!-- Sidebar/menu -->
+
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row menu_title">
+	Developing software since 1987
+  </div>
+  <hr>
+  <div class="w3-bar-block">
+
+	<a href="index.html" class="w3-bar-item w3-button w3-padding menu-option" id="index">
+		<i class="fas fa-home fa-fw"></i>&nbsp; Home	</a>
+	<a href="projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Professional projects	</a>
+	<a href="my-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="my-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Personal projects	</a>
+	<a href="cpm-projects.html" class="w3-bar-item w3-button w3-padding menu-option menu-option-selected" id="cpm-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; CP/M projects	</a>
+	<a href="pcw-projects.html" class="w3-bar-item w3-button w3-padding menu-option" id="pcw-projects">
+		<i class="fas fa-desktop fa-fw"></i>&nbsp; Amstrad PCW projects	</a>
+	<a href="notebook.html" class="w3-bar-item w3-button w3-padding menu-option" id="notebook">
+		<i class="fas fa-pencil-alt fa-fw"></i>&nbsp; Notebook	</a>
+	<a href="downloads.html" class="w3-bar-item w3-button w3-padding menu-option" id="downloads">
+		<i class="fas fa-download fa-fw"></i>&nbsp; Downloads	</a>
+	<a href="links.html" class="w3-bar-item w3-button w3-padding menu-option" id="links">
+		<i class="fas fa-link fa-fw"></i>&nbsp; Links	</a>
+	<a href="terms-and-privacy.html" class="w3-bar-item w3-button w3-padding menu-option" id="terms-and-privacy">
+		<i class="fas fa-shield-alt fa-fw"></i>&nbsp; Terms & privacy	</a>
+
+	<br><br>
+  </div>
+</nav>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+  
+  <!-- Contents goes here -->
+  <div id="section_main" class="section_main">
+  		<div class="w3-container md">
+<div class="software-project-body">
+    <h1>
+        Find that mine!    </h1>
+                <p>
+                <i class="fab fa-github"></i> <a href="https://github.com/MiguelVis/ftm" target="_blank" title="GitHub repository">https://github.com/MiguelVis/ftm</a>
+            </p>
+        <hr class="software-project-separator"/>
+    <p>This is a clon of Minesweeper for the CP/M operating system.</p>
+<p><img src="images/cpm-findthatmine.png" alt="Find that mine! image" title="Find that mine! image" /></p>
+<h2>Introduction</h2>
+<p>This is a clon (yes, one more!) of MineSweeper for CP/M with supported CRTs,
+derived from the plain CP/M version (and itself from the Amstrad PCW
+&amp; Samaruc GUI version).</p>
+<p>It should run in any version of the CP/M operating system, running in any
+computer with a supported CRT, and a Z80 CPU.</p>
+<h2>Running the game</h2>
+<p>To start the game, type at the CP/M prompt the following:</p>
+<pre><code>ftm TTY_NAME</code></pre>
+<p>where <code>TTY_NAME</code> is one of the supported TTY names,
+and follow the instructions.</p>
+<p>To know the supported TTYs, just type <code>ftm</code> at the CP/M prompt - ie:</p>
+<pre><code>A&gt;ftm
+Usage: ftm tty_name
+
+Supported TTY names:
+        VT52
+        VT100
+        PCW
+        CPC
+        SPECTRUM
+        KAYPRO</code></pre>
+<h2>The game</h2>
+<p>The aim of the game is to find all the mines on the board, putting a flag on
+them and uncovering the other squares.</p>
+<p>If you uncover a mine, you lose the game.</p>
+<p>There are three different levels:</p>
+<ul>
+<li>Level 1 : 08 x 08 squares, 08 mines</li>
+<li>Level 2 : 08 x 12 squares, 12 mines</li>
+<li>Level 3 : 08 x 16 squares, 16 mines</li>
+</ul>
+<h2>How to play</h2>
+<p>In the board, a number on a square means the quantity of mines around it.</p>
+<p>To uncover a square, you must enter a command telling its position as row and column - ie:</p>
+<pre><code>1C</code></pre>
+<p>To put or remove a flag on a square, you must append a F character to the command - ie:</p>
+<pre><code>3DF</code></pre></div>
+		</div>
+  </div>
+
+  <!-- Footer -->
+  <br><br>
+  <footer class="w3-container">
+    <p class="">
+      &copy; 2026 Miguel I. Garc&iacute;a L&oacute;pez	  </p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.backgroundColor = 'transparent';
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.backgroundColor = '#fff';
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+<!--script src="js/app.js"></script-->
+
+</body>
+</html>
