@@ -295,22 +295,59 @@ hr.notebook-separator {
 
 /* Software projects */
 
+.software-project-sidebar {
+	padding-left: 0px;
+	margin-bottom: 1em;
+}
+
+.software-project-sidebar-box {
+	padding: 1em;
+}
+
+.software-project-sidebar-box-title {
+	margin-bottom: 1em;
+	font-size: 1.25em;
+}
+
+.software-project-sidebar-box-title-text {
+	font-weight: bold;
+}
+
+a.software-project-link-news {
+	text-decoration: none;
+}
+
+a.software-project-link-news:hover {
+	color: #00c600;
+}
+
 hr.software-project-separator {
 	border-top: 1px solid #c0c0c0;
 }
 
+@media (min-width: 601px) {
+	.software-project-sidebar {
+		margin-top: 1em;
+		padding-left: 1em;
+	}
+}
+
 @media (min-width: 1200px) {
+/*	
 	.software-project-body {
 		padding-left: 10%;
 		padding-right: 20%;
 	}
+*/	
 }
 
 @media (min-width: 1440px) {
+/*	
 	.software-project-body {
 		padding-left: 10%;
 		padding-right: 30%;
 	}
+*/	
 }
 
 
