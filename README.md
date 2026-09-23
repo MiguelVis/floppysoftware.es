@@ -8,7 +8,7 @@ This is the source code of my personal website:
 
 [floppysoftware.es](https://floppysoftware.es)
 
-Currently is just HTML plus a bit of JavaScript.
+Currently is just HTML plus a bit of JavaScript. For the styles, I use [W3.CSS](https://www.w3schools.com/w3css/default.asp).
 
 It's also an installable PWA - Progressive Web App.
 
