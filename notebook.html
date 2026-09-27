@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
   <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
   <link rel="stylesheet" href="css/app.css">
+
+  <script src="js/app.js"></script>
 </head>
 <body class="" onload="">
 
@@ -58,6 +60,9 @@
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
+<!-- Toast -->
+<div id="app-toast" class="w3-panel w3-round-large w3-animate-opacity w3-hide app-toast"></div>
+
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
   
@@ -70,9 +75,11 @@ some of them could be of interest.</p>
 <script src="js/notebook.js"></script>
 
 <aside class="w3-col s12 m4 w3-right notebook-sidebar">
-	<i class="fas fa-filter"></i>
-	<br>
-	<div id="notebook-tags-filter">
+	<div class="notebook-sidebar-box w3-border">
+		<div class="notebook-sidebar-box-title">
+            <span class="notebook-sidebar-box-title-text">Filter</span>
+            <span class="w3-right"><i class="fas fa-filter"></i></span>
+        </div>
 							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="arquitectura" data-active="true" onclick="notebook.clickTagFilterByIndex(0);" id="notebook-tag-filter-0">
 						arquitectura					</div>
 									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="multitenant" data-active="true" onclick="notebook.clickTagFilterByIndex(1);" id="notebook-tag-filter-1">
@@ -112,243 +119,39 @@ some of them could be of interest.</p>
 
 <main class="w3-col s12 m8">
 
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="arquitectura|multitenant" id="notebook-post-0">
-	<h2>Arquitectura multitenant (I)<span class="w3-right">1</span></h2>
-	<p style="font-size:80%">August 5, 2021 | ES</p>
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="api" id="notebook-post-14">
+	<h2>Integraciones<span class="w3-right">15</span></h2>
+	<p style="font-size:80%">September 23, 2026 | ES</p>
 	<p>
 		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
 	</p>
 	<p>
-		Una introducción. Definición, ventajas e inconvenientes.	</p>
+		Integraciones. Conectando islas mediante las API.	</p>
 	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="arquitectura" onclick="notebook.clickExclusiveTagFilterByName('arquitectura');">
-						arquitectura 					</div>
-									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="multitenant" onclick="notebook.clickExclusiveTagFilterByName('multitenant');">
-						multitenant 					</div>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="api" onclick="notebook.clickExclusiveTagFilterByName('api');">
+						api 					</div>
 					</p>
 	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0001-multitenant-intro.html">
+		<a class="w3-button w3-green w3-border" href="nb-0015-integrations.html">
 			Read more &raquo;
 		</a>
 	</p>
 </div>
 
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="arquitectura|multitenant|base-de-datos" id="notebook-post-1">
-	<h2>Arquitectura multitenant (II)<span class="w3-right">2</span></h2>
-	<p style="font-size:80%">August 28, 2021 | ES</p>
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="acrónimos" id="notebook-post-13">
+	<h2>Acrónimos<span class="w3-right">14</span></h2>
+	<p style="font-size:80%">September 13, 2026 | ES</p>
 	<p>
 		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
 	</p>
 	<p>
-		Almacenamiento y gestión de los datos.	</p>
+		Echo de menos los acrónimos. El IMHO, AFAIK, BTW y toda la tropa.	</p>
 	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="arquitectura" onclick="notebook.clickExclusiveTagFilterByName('arquitectura');">
-						arquitectura 					</div>
-									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="multitenant" onclick="notebook.clickExclusiveTagFilterByName('multitenant');">
-						multitenant 					</div>
-									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="base-de-datos" onclick="notebook.clickExclusiveTagFilterByName('base-de-datos');">
-						base-de-datos 					</div>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="acrónimos" onclick="notebook.clickExclusiveTagFilterByName('acrónimos');">
+						acrónimos 					</div>
 					</p>
 	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0002-multitenant-db.html">
-			Read more &raquo;
-		</a>
-	</p>
-</div>
-
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="mentoría" id="notebook-post-2">
-	<h2>Sobre las mentorías<span class="w3-right">3</span></h2>
-	<p style="font-size:80%">November 24, 2025 | ES</p>
-	<p>
-		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
-	</p>
-	<p>
-		Dándole vueltas a las mentorías.	</p>
-	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="mentoría" onclick="notebook.clickExclusiveTagFilterByName('mentoría');">
-						mentoría 					</div>
-					</p>
-	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0003-about-mentoring.html">
-			Read more &raquo;
-		</a>
-	</p>
-</div>
-
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="mentoría" id="notebook-post-3">
-	<h2>Mentoría programador@s Junior<span class="w3-right">4</span></h2>
-	<p style="font-size:80%">November 17, 2025 | ES</p>
-	<p>
-		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
-	</p>
-	<p>
-		Ayudando a programadores junior a encontrar su primer empleo.	</p>
-	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="mentoría" onclick="notebook.clickExclusiveTagFilterByName('mentoría');">
-						mentoría 					</div>
-					</p>
-	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0004-mentoring.html">
-			Read more &raquo;
-		</a>
-	</p>
-</div>
-
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="lenguaje-c" id="notebook-post-4">
-	<h2>La memoria<span class="w3-right">5</span></h2>
-	<p style="font-size:80%">July 1, 2025 | ES</p>
-	<p>
-		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
-	</p>
-	<p>
-		La memoria (o falta de ella). Me refiero a la RAM.	</p>
-	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="lenguaje-c" onclick="notebook.clickExclusiveTagFilterByName('lenguaje-c');">
-						lenguaje-c 					</div>
-					</p>
-	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0005-memory.html">
-			Read more &raquo;
-		</a>
-	</p>
-</div>
-
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="ia" id="notebook-post-5">
-	<h2>IA<span class="w3-right">6</span></h2>
-	<p style="font-size:80%">December 27, 2025 | ES</p>
-	<p>
-		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
-	</p>
-	<p>
-		La IA te amplifica y tal.	</p>
-	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="ia" onclick="notebook.clickExclusiveTagFilterByName('ia');">
-						ia 					</div>
-					</p>
-	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0006-ia.html">
-			Read more &raquo;
-		</a>
-	</p>
-</div>
-
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="liderazgo|equipo" id="notebook-post-6">
-	<h2>Equipos y líderes<span class="w3-right">7</span></h2>
-	<p style="font-size:80%">April 10, 2026 | ES</p>
-	<p>
-		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
-	</p>
-	<p>
-		¿Por qué siempre se habla sobre qué es un líder? ¿En qué lugar queda el equipo?	</p>
-	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="liderazgo" onclick="notebook.clickExclusiveTagFilterByName('liderazgo');">
-						liderazgo 					</div>
-									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="equipo" onclick="notebook.clickExclusiveTagFilterByName('equipo');">
-						equipo 					</div>
-					</p>
-	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0007-leaders.html">
-			Read more &raquo;
-		</a>
-	</p>
-</div>
-
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="algoritmo" id="notebook-post-7">
-	<h2>Algoritmos y aspiradoras<span class="w3-right">8</span></h2>
-	<p style="font-size:80%">April 15, 2026 | ES</p>
-	<p>
-		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
-	</p>
-	<p>
-		La letra pequeña de los algoritmos. Cómo se las gasta mi robot aspirador.	</p>
-	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="algoritmo" onclick="notebook.clickExclusiveTagFilterByName('algoritmo');">
-						algoritmo 					</div>
-					</p>
-	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0008-aspiradora.html">
-			Read more &raquo;
-		</a>
-	</p>
-</div>
-
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="personal" id="notebook-post-8">
-	<h2>Diez años<span class="w3-right">9</span></h2>
-	<p style="font-size:80%">June 04, 2026 | ES</p>
-	<p>
-		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
-	</p>
-	<p>
-		Diez años trabajando en NETHITS. Y han pasado volando.	</p>
-	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="personal" onclick="notebook.clickExclusiveTagFilterByName('personal');">
-						personal 					</div>
-					</p>
-	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0009-ten-years.html">
-			Read more &raquo;
-		</a>
-	</p>
-</div>
-
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="ia|claude|claude-code" id="notebook-post-9">
-	<h2>IA<span class="w3-right">10</span></h2>
-	<p style="font-size:80%">June 20, 2026 | ES</p>
-	<p>
-		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
-	</p>
-	<p>
-		No confíes (a ciegas) en la IA.	</p>
-	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="ia" onclick="notebook.clickExclusiveTagFilterByName('ia');">
-						ia 					</div>
-									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="claude" onclick="notebook.clickExclusiveTagFilterByName('claude');">
-						claude 					</div>
-									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="claude-code" onclick="notebook.clickExclusiveTagFilterByName('claude-code');">
-						claude-code 					</div>
-					</p>
-	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0010-dont-trust-ai.html">
-			Read more &raquo;
-		</a>
-	</p>
-</div>
-
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="ia" id="notebook-post-10">
-	<h2>IA<span class="w3-right">11</span></h2>
-	<p style="font-size:80%">July 15, 2026 | ES</p>
-	<p>
-		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
-	</p>
-	<p>
-		En esta ocasión no quise utilizar la IA. E hice bien.	</p>
-	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="ia" onclick="notebook.clickExclusiveTagFilterByName('ia');">
-						ia 					</div>
-					</p>
-	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0011-didnt-use-ai.html">
-			Read more &raquo;
-		</a>
-	</p>
-</div>
-
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="ia|fullstack" id="notebook-post-11">
-	<h2>Fullstack e IA<span class="w3-right">12</span></h2>
-	<p style="font-size:80%">July 20, 2026 | ES</p>
-	<p>
-		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
-	</p>
-	<p>
-		El ¿mito? del programador fullstack en tiempos de la IA.	</p>
-	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="ia" onclick="notebook.clickExclusiveTagFilterByName('ia');">
-						ia 					</div>
-									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="fullstack" onclick="notebook.clickExclusiveTagFilterByName('fullstack');">
-						fullstack 					</div>
-					</p>
-	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0012-fullstack.html">
+		<a class="w3-button w3-green w3-border" href="nb-0014-imho.html">
 			Read more &raquo;
 		</a>
 	</p>
@@ -377,39 +180,243 @@ some of them could be of interest.</p>
 	</p>
 </div>
 
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="acrónimos" id="notebook-post-13">
-	<h2>Acrónimos<span class="w3-right">14</span></h2>
-	<p style="font-size:80%">September 13, 2026 | ES</p>
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="ia|fullstack" id="notebook-post-11">
+	<h2>Fullstack e IA<span class="w3-right">12</span></h2>
+	<p style="font-size:80%">July 20, 2026 | ES</p>
 	<p>
 		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
 	</p>
 	<p>
-		Echo de menos los acrónimos. El IMHO, AFAIK, BTW y toda la tropa.	</p>
+		El ¿mito? del programador fullstack en tiempos de la IA.	</p>
 	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="acrónimos" onclick="notebook.clickExclusiveTagFilterByName('acrónimos');">
-						acrónimos 					</div>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="ia" onclick="notebook.clickExclusiveTagFilterByName('ia');">
+						ia 					</div>
+									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="fullstack" onclick="notebook.clickExclusiveTagFilterByName('fullstack');">
+						fullstack 					</div>
 					</p>
 	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0014-imho.html">
+		<a class="w3-button w3-green w3-border" href="nb-0012-fullstack.html">
 			Read more &raquo;
 		</a>
 	</p>
 </div>
 
-<div class="w3-container w3-card w3-white notebook-post-card" data-tags="api" id="notebook-post-14">
-	<h2>Integraciones<span class="w3-right">15</span></h2>
-	<p style="font-size:80%">September 23, 2026 | ES</p>
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="ia" id="notebook-post-10">
+	<h2>IA<span class="w3-right">11</span></h2>
+	<p style="font-size:80%">July 15, 2026 | ES</p>
 	<p>
 		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
 	</p>
 	<p>
-		Integraciones. Conectando islas mediante las API.	</p>
+		En esta ocasión no quise utilizar la IA. E hice bien.	</p>
 	<p>
-							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="api" onclick="notebook.clickExclusiveTagFilterByName('api');">
-						api 					</div>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="ia" onclick="notebook.clickExclusiveTagFilterByName('ia');">
+						ia 					</div>
 					</p>
 	<p>
-		<a class="w3-button w3-green w3-border" href="nb-0015-integrations.html">
+		<a class="w3-button w3-green w3-border" href="nb-0011-didnt-use-ai.html">
+			Read more &raquo;
+		</a>
+	</p>
+</div>
+
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="ia|claude|claude-code" id="notebook-post-9">
+	<h2>IA<span class="w3-right">10</span></h2>
+	<p style="font-size:80%">June 20, 2026 | ES</p>
+	<p>
+		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+	</p>
+	<p>
+		No confíes (a ciegas) en la IA.	</p>
+	<p>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="ia" onclick="notebook.clickExclusiveTagFilterByName('ia');">
+						ia 					</div>
+									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="claude" onclick="notebook.clickExclusiveTagFilterByName('claude');">
+						claude 					</div>
+									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="claude-code" onclick="notebook.clickExclusiveTagFilterByName('claude-code');">
+						claude-code 					</div>
+					</p>
+	<p>
+		<a class="w3-button w3-green w3-border" href="nb-0010-dont-trust-ai.html">
+			Read more &raquo;
+		</a>
+	</p>
+</div>
+
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="personal" id="notebook-post-8">
+	<h2>Diez años<span class="w3-right">9</span></h2>
+	<p style="font-size:80%">June 04, 2026 | ES</p>
+	<p>
+		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+	</p>
+	<p>
+		Diez años trabajando en NETHITS. Y han pasado volando.	</p>
+	<p>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="personal" onclick="notebook.clickExclusiveTagFilterByName('personal');">
+						personal 					</div>
+					</p>
+	<p>
+		<a class="w3-button w3-green w3-border" href="nb-0009-ten-years.html">
+			Read more &raquo;
+		</a>
+	</p>
+</div>
+
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="algoritmo" id="notebook-post-7">
+	<h2>Algoritmos y aspiradoras<span class="w3-right">8</span></h2>
+	<p style="font-size:80%">April 15, 2026 | ES</p>
+	<p>
+		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+	</p>
+	<p>
+		La letra pequeña de los algoritmos. Cómo se las gasta mi robot aspirador.	</p>
+	<p>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="algoritmo" onclick="notebook.clickExclusiveTagFilterByName('algoritmo');">
+						algoritmo 					</div>
+					</p>
+	<p>
+		<a class="w3-button w3-green w3-border" href="nb-0008-aspiradora.html">
+			Read more &raquo;
+		</a>
+	</p>
+</div>
+
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="liderazgo|equipo" id="notebook-post-6">
+	<h2>Equipos y líderes<span class="w3-right">7</span></h2>
+	<p style="font-size:80%">April 10, 2026 | ES</p>
+	<p>
+		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+	</p>
+	<p>
+		¿Por qué siempre se habla sobre qué es un líder? ¿En qué lugar queda el equipo?	</p>
+	<p>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="liderazgo" onclick="notebook.clickExclusiveTagFilterByName('liderazgo');">
+						liderazgo 					</div>
+									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="equipo" onclick="notebook.clickExclusiveTagFilterByName('equipo');">
+						equipo 					</div>
+					</p>
+	<p>
+		<a class="w3-button w3-green w3-border" href="nb-0007-leaders.html">
+			Read more &raquo;
+		</a>
+	</p>
+</div>
+
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="ia" id="notebook-post-5">
+	<h2>IA<span class="w3-right">6</span></h2>
+	<p style="font-size:80%">December 27, 2025 | ES</p>
+	<p>
+		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+	</p>
+	<p>
+		La IA te amplifica y tal.	</p>
+	<p>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="ia" onclick="notebook.clickExclusiveTagFilterByName('ia');">
+						ia 					</div>
+					</p>
+	<p>
+		<a class="w3-button w3-green w3-border" href="nb-0006-ia.html">
+			Read more &raquo;
+		</a>
+	</p>
+</div>
+
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="lenguaje-c" id="notebook-post-4">
+	<h2>La memoria<span class="w3-right">5</span></h2>
+	<p style="font-size:80%">July 1, 2025 | ES</p>
+	<p>
+		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+	</p>
+	<p>
+		La memoria (o falta de ella). Me refiero a la RAM.	</p>
+	<p>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="lenguaje-c" onclick="notebook.clickExclusiveTagFilterByName('lenguaje-c');">
+						lenguaje-c 					</div>
+					</p>
+	<p>
+		<a class="w3-button w3-green w3-border" href="nb-0005-memory.html">
+			Read more &raquo;
+		</a>
+	</p>
+</div>
+
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="mentoría" id="notebook-post-3">
+	<h2>Mentoría programador@s Junior<span class="w3-right">4</span></h2>
+	<p style="font-size:80%">November 17, 2025 | ES</p>
+	<p>
+		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+	</p>
+	<p>
+		Ayudando a programadores junior a encontrar su primer empleo.	</p>
+	<p>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="mentoría" onclick="notebook.clickExclusiveTagFilterByName('mentoría');">
+						mentoría 					</div>
+					</p>
+	<p>
+		<a class="w3-button w3-green w3-border" href="nb-0004-mentoring.html">
+			Read more &raquo;
+		</a>
+	</p>
+</div>
+
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="mentoría" id="notebook-post-2">
+	<h2>Sobre las mentorías<span class="w3-right">3</span></h2>
+	<p style="font-size:80%">November 24, 2025 | ES</p>
+	<p>
+		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+	</p>
+	<p>
+		Dándole vueltas a las mentorías.	</p>
+	<p>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="mentoría" onclick="notebook.clickExclusiveTagFilterByName('mentoría');">
+						mentoría 					</div>
+					</p>
+	<p>
+		<a class="w3-button w3-green w3-border" href="nb-0003-about-mentoring.html">
+			Read more &raquo;
+		</a>
+	</p>
+</div>
+
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="arquitectura|multitenant|base-de-datos" id="notebook-post-1">
+	<h2>Arquitectura multitenant (II)<span class="w3-right">2</span></h2>
+	<p style="font-size:80%">August 28, 2021 | ES</p>
+	<p>
+		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+	</p>
+	<p>
+		Almacenamiento y gestión de los datos.	</p>
+	<p>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="arquitectura" onclick="notebook.clickExclusiveTagFilterByName('arquitectura');">
+						arquitectura 					</div>
+									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="multitenant" onclick="notebook.clickExclusiveTagFilterByName('multitenant');">
+						multitenant 					</div>
+									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="base-de-datos" onclick="notebook.clickExclusiveTagFilterByName('base-de-datos');">
+						base-de-datos 					</div>
+					</p>
+	<p>
+		<a class="w3-button w3-green w3-border" href="nb-0002-multitenant-db.html">
+			Read more &raquo;
+		</a>
+	</p>
+</div>
+
+<div class="w3-container w3-card w3-white notebook-post-card" data-tags="arquitectura|multitenant" id="notebook-post-0">
+	<h2>Arquitectura multitenant (I)<span class="w3-right">1</span></h2>
+	<p style="font-size:80%">August 5, 2021 | ES</p>
+	<p>
+		<img class="notebook-author" src="images/me.jpg" alt="Just my photo"> <span style="font-size:80%">Miguel García</a>
+	</p>
+	<p>
+		Una introducción. Definición, ventajas e inconvenientes.	</p>
+	<p>
+							<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="arquitectura" onclick="notebook.clickExclusiveTagFilterByName('arquitectura');">
+						arquitectura 					</div>
+									<div class="w3-tag w3-round w3-black notebook-tag clickable" data-name="multitenant" onclick="notebook.clickExclusiveTagFilterByName('multitenant');">
+						multitenant 					</div>
+					</p>
+	<p>
+		<a class="w3-button w3-green w3-border" href="nb-0001-multitenant-intro.html">
 			Read more &raquo;
 		</a>
 	</p>

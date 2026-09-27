@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
   <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
   <link rel="stylesheet" href="css/app.css">
+
+  <script src="js/app.js"></script>
 </head>
 <body class="" onload="">
 
@@ -57,6 +59,9 @@
 </nav>
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Toast -->
+<div id="app-toast" class="w3-panel w3-round-large w3-animate-opacity w3-hide app-toast"></div>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
@@ -140,33 +145,47 @@
                             <a class="w3-button w3-green w3-border w3-display-middle" href="notebook.html" title="Notebook">
                 <i class="fas fa-pencil-alt"></i>
             </a>
-            </div>
+                            <a class="w3-button w3-green w3-border w3-display-right notebook-post-pager-button" href="nb-0015-integrations.html" title="Integraciones"">
+                        Next &raquo;
+                    </a>
+                    </div>
 
 </main>
 
 <aside class="w3-col s12 m4 w3-right notebook-post-sidebar">
     <div class="notebook-post-sidebar-box w3-border">
         <div class="notebook-post-sidebar-box-title">
+            <span class="notebook-post-sidebar-box-title-text">Share</span>
+            <span class="w3-right"><i class="fas fa-share-alt"></i></span>
+        </div>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://floppysoftware.es/nb-0014-imho.html" target="_blank" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://floppysoftware.es/nb-0014-imho.html" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=https://floppysoftware.es/nb-0014-imho.html&text=Acr%C3%B3nimos+-+Echo+de+menos+los+acr%C3%B3nimos.+El+IMHO%2C+AFAIK%2C+BTW+y+toda+la+tropa." target="_blank" title="Share on X"><i class="fas fa-times"></i></i></a>
+        <a href="https://floppysoftware.es/nb-0014-imho.html" target="_blank" title="Copy link" onclick="return notebook_post.copyLinkToClipboard(this);"><i class="fas fa-link"></i></a>
+    </div>
+
+    <div class="notebook-post-sidebar-box w3-border">
+        <div class="notebook-post-sidebar-box-title">
             <span class="notebook-post-sidebar-box-title-text">See also</span>
             <span class="w3-right"><i class="fas fa-hand-point-down"></i></span>
         </div>
-                            <a href="nb-0003-about-mentoring.html" class="notebook-post-link-random-post">
-                        Dándole vueltas a las mentorías.                    </a>
+                            <a href="nb-0010-dont-trust-ai.html" class="notebook-post-link-random-post">
+                        No confíes (a ciegas) en la IA.                    </a>
                     <br>
                     <div style="font-size:80%">
-                        November 24, 2025                    </div>
+                        June 20, 2026                    </div>
                                                     <hr class="notebook-separator">
-                                                                <a href="nb-0009-ten-years.html" class="notebook-post-link-random-post">
-                        Diez años trabajando en NETHITS. Y han pasado volando.                    </a>
+                                                                <a href="nb-0001-multitenant-intro.html" class="notebook-post-link-random-post">
+                        Una introducción. Definición, ventajas e inconvenientes.                    </a>
                     <br>
                     <div style="font-size:80%">
-                        June 04, 2026                    </div>
+                        August 5, 2021                    </div>
                                                     <hr class="notebook-separator">
-                                                                <a href="nb-0012-fullstack.html" class="notebook-post-link-random-post">
-                        El ¿mito? del programador fullstack en tiempos de la IA.                    </a>
+                                                                <a href="nb-0015-integrations.html" class="notebook-post-link-random-post">
+                        Integraciones. Conectando islas mediante las API.                    </a>
                     <br>
                     <div style="font-size:80%">
-                        July 20, 2026                    </div>
+                        September 23, 2026                    </div>
                                         </div>
 </aside>
 

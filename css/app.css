@@ -193,11 +193,41 @@ li.half-empty {
 	box-shadow: 4px 4px 8px grey;
 }
 
+/* App */
+.app-toast {
+	position: fixed;
+	bottom: 3.5em;
+	left: 50%;
+	transform: translateX(-50%);
+
+	width: fit-content;
+	margin: 0;
+/*
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s;
+*/	
+}
+
 /* Notebook */
 
 .notebook-sidebar {
 	padding-left: 0px;
+	/*margin-bottom: 1em;*/
+}
+
+.notebook-sidebar-box {
+	padding: 1em;
 	margin-bottom: 1em;
+}
+
+.notebook-sidebar-box-title {
+	margin-bottom: 1em;
+	font-size: 1.25em;
+}
+
+.notebook-sidebar-box-title-text {
+	font-weight: bold;
 }
 
 .notebook-post-card {
@@ -214,11 +244,12 @@ li.half-empty {
 
 .notebook-post-sidebar {
 	padding-left: 0px;
-	margin-bottom: 1em;
+	/*margin-bottom: 1em;*/
 }
 
 .notebook-post-sidebar-box {
 	padding: 1em;
+	margin-bottom: 1em;
 }
 
 .notebook-post-sidebar-box-title {
@@ -297,11 +328,12 @@ hr.notebook-separator {
 
 .software-project-sidebar {
 	padding-left: 0px;
-	margin-bottom: 1em;
+	/*margin-bottom: 1em;*/
 }
 
 .software-project-sidebar-box {
 	padding: 1em;
+	margin-bottom: 1em;
 }
 
 .software-project-sidebar-box-title {

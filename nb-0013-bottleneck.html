@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="vendor/w3css/v5/w3.css">
   <link rel="stylesheet" href="vendor/font-awesome/v5/css/all.min.css">
   <link rel="stylesheet" href="css/app.css">
+
+  <script src="js/app.js"></script>
 </head>
 <body class="" onload="">
 
@@ -57,6 +59,9 @@
 </nav>
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Toast -->
+<div id="app-toast" class="w3-panel w3-round-large w3-animate-opacity w3-hide app-toast"></div>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
@@ -141,26 +146,37 @@
 <aside class="w3-col s12 m4 w3-right notebook-post-sidebar">
     <div class="notebook-post-sidebar-box w3-border">
         <div class="notebook-post-sidebar-box-title">
+            <span class="notebook-post-sidebar-box-title-text">Share</span>
+            <span class="w3-right"><i class="fas fa-share-alt"></i></span>
+        </div>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://floppysoftware.es/nb-0013-bottleneck.html" target="_blank" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://floppysoftware.es/nb-0013-bottleneck.html" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=https://floppysoftware.es/nb-0013-bottleneck.html&text=El+cuello+de+botella+-+El+cuello+de+botella+del+software+en+tiempos+del+x10.+O+el+x100.+O+el+x1000." target="_blank" title="Share on X"><i class="fas fa-times"></i></i></a>
+        <a href="https://floppysoftware.es/nb-0013-bottleneck.html" target="_blank" title="Copy link" onclick="return notebook_post.copyLinkToClipboard(this);"><i class="fas fa-link"></i></a>
+    </div>
+
+    <div class="notebook-post-sidebar-box w3-border">
+        <div class="notebook-post-sidebar-box-title">
             <span class="notebook-post-sidebar-box-title-text">See also</span>
             <span class="w3-right"><i class="fas fa-hand-point-down"></i></span>
         </div>
-                            <a href="nb-0006-ia.html" class="notebook-post-link-random-post">
-                        La IA te amplifica y tal.                    </a>
+                            <a href="nb-0012-fullstack.html" class="notebook-post-link-random-post">
+                        El ¿mito? del programador fullstack en tiempos de la IA.                    </a>
                     <br>
                     <div style="font-size:80%">
-                        December 27, 2025                    </div>
+                        July 20, 2026                    </div>
                                                     <hr class="notebook-separator">
-                                                                <a href="nb-0007-leaders.html" class="notebook-post-link-random-post">
-                        ¿Por qué siempre se habla sobre qué es un líder? ¿En qué lugar queda el equipo?                    </a>
+                                                                <a href="nb-0004-mentoring.html" class="notebook-post-link-random-post">
+                        Ayudando a programadores junior a encontrar su primer empleo.                    </a>
                     <br>
                     <div style="font-size:80%">
-                        April 10, 2026                    </div>
+                        November 17, 2025                    </div>
                                                     <hr class="notebook-separator">
-                                                                <a href="nb-0014-imho.html" class="notebook-post-link-random-post">
-                        Echo de menos los acrónimos. El IMHO, AFAIK, BTW y toda la tropa.                    </a>
+                                                                <a href="nb-0015-integrations.html" class="notebook-post-link-random-post">
+                        Integraciones. Conectando islas mediante las API.                    </a>
                     <br>
                     <div style="font-size:80%">
-                        September 13, 2026                    </div>
+                        September 23, 2026                    </div>
                                         </div>
 </aside>
 
